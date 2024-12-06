@@ -28,13 +28,13 @@ We present the guidelines as a checklist in this README. This means that your te
 - [X] Make sure that each team member has access to the repo.
 - [X] Come up with a topic and set of research questions your team will explore.
 - [ ] Make a plan for your work. We suggested putting together your work plan by <mark>Wednesday, Dec. 4, 2024</mark>.
-- [ ] Locate appropriate data sources for your project.
-  - [ ] Your main data source may __not__ be one that we used in class nor be found in any R package.
-  - [ ] Supplementary data sources may come from anywhere.
+- [X] Locate appropriate data sources for your project.
+  - [X] Your main data source may __not__ be one that we used in class nor be found in any R package.
+  - [X] Supplementary data sources may come from anywhere.
 - [ ] Read in your data and perform any necessary data wrangling and cleaning.
 - [ ] Conduct Exploratory Data Analysis.
-- [ ] Prepare a reproducible report.
-  - [ ] Use a QMD file; the output type is PDF.
+- [X] Prepare a reproducible report.
+  - [X] Use a QMD file; the output type is PDF.
   - [ ] The report should be well organized with section headings
   - [ ] Code should __only__ be found in a Code Appendix at the end for a PDF, not in the body of your report.
     - __TIP!__ The following code chunk can be added to a QMD file and will automatically build a section of code.
