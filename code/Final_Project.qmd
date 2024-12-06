@@ -5,23 +5,34 @@ format: html
 editor: visual
 ---
 
-## Quarto
+# Introduction
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Research Questions
 
-## Running Code
+## Data Introduction
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Analysis Outline
 
-```{r}
-1 + 1
-```
+# Data Analysis
 
-You can add options to executable code like this
+## Research Question #1
 
-```{r}
-#| echo: false
-2 * 2
-```
+## Findings For Question #1
 
-The `echo: false` option disables the printing of code (only output is displayed).
+## Research Question #2
+
+## Findings For Question #2
+
+## Conclusion
+
+# Hypothesis Testing
+
+## Introduction To The Hypothesis
+
+## Introduction To The Testing Method
+
+## Conducting Testing
+
+## Conclusion
+
+# Code Appendix
