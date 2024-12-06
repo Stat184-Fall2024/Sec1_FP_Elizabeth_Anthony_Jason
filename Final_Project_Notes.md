@@ -5,7 +5,7 @@
 
 ### 1. Notes
 ##### 1.1. Tasks to Allocate
-1. **Make a Plan to Work (<u>In Class 12/6</u>)
+1. **Make a Plan to Work** (<u>In Class 12/6</u>)
 	1. Due Dates: 
 		1. Presentation on 12/13 (Friday)
 		2. Submit Project on 12/18 (Wednesday)
