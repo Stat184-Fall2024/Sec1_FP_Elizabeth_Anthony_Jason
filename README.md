@@ -27,7 +27,7 @@ We present the guidelines as a checklist in this README. This means that your te
   - [X] The owner of the repo should be `Stat184-Fall2024`. 
 - [X] Make sure that each team member has access to the repo.
 - [X] Come up with a topic and set of research questions your team will explore.
-- [ ] Make a plan for your work. We suggested putting together your work plan by <mark>Wednesday, Dec. 4, 2024</mark>.
+- [X] Make a plan for your work. We suggested putting together your work plan by <mark>Wednesday, Dec. 4, 2024</mark>.
 - [X] Locate appropriate data sources for your project.
   - [X] Your main data source may __not__ be one that we used in class nor be found in any R package.
   - [X] Supplementary data sources may come from anywhere.
