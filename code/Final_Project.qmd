@@ -22,9 +22,9 @@ summary(data)
 ## Research Questions
 For our final project, we are interested in how a student's lifestyle affects their GPA. Our initial research question is "does having a higher number of sleep hours correlate with a higher GPA" and our second research question is "does having a higher number of social hours correlate with a lower GPA?"
 
-We are correlating sleep hours and social hours with GPA instead of study hours because students are obviously wanting social lives, and study hours have a generally direct causal relationship to a higher GPA and there have been numerous studies done on that relationship before and we do not think it would bring anything new to the table with our analysis. 
+We are correlating sleep hours and social hours with GPA instead of study hours because students are obviously wanting social lives, and study hours have a generally direct causal relationship to a higher GPA. Furthermore, there have been numerous studies done on that relationship before and we do not think we would bring anything new to the table with our analysis. 
 
-Even still, all four of those variables are intertwined in a student's lifestyle. Each variable comes with a trade-off for another. The more studying a student might do, the higher their GPA might be, but both their social and sleep hours would be diminished. The opposite is also true.
+Even still, all four of those variables are intertwined in a student's lifestyle. Each variable comes with a trade-off for another. The more studying a student might do, the higher their GPA might be, but both their social and sleep hours would be diminished. The opposite is also true. We want to see just how much impact the latter two variables have on GPA.
 
 ## Data Introduction
 We are using a data set from the website Kaggle, which has a public catalog free for anyone to use. The specific data set that we landed on was student_lifestyle_dataset.csv. It has 2000 cases, each with a recorded value for seven variables about their daily lifestyle, including sleep hours, social hours, and GPA. Each case is identified by a number going from 1-2000.
