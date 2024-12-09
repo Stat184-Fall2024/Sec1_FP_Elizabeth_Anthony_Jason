@@ -5,6 +5,18 @@ format: html
 editor: visual
 ---
 
+```{r}
+#| message: false
+#| echo: false
+#| warning: false
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+data <- read.csv("../data/student_lifestyle_dataset.csv")
+head(data)
+summary(data)
+```
+
 # Introduction
 
 ## Research Questions
