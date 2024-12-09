@@ -11,10 +11,16 @@
 		2. Submit Project on 12/18 (Wednesday)
 		3. Submit Peer Review (Required!!) on 12/19 (Thursday)
 2. **Plan:**
-	1. ???
+	1. Elizabeth → Introduction (research question*s*), initial data exploration with some visuals
+		1. Explain our two research questions
+		2. Introduce where we got the data from + what variables it has
+	2. Anthony → Full analysis of “Sleep to GPA”
+	3. Jason → Full analysis of other explanatory variables (correlation versus causation?)
+		1. Check “Variable 2 versus GPA” for whether it’s a better correlation
+		2. Correlate “Sleep versus Variable 2” (correlation b/t the two)
+	4. Everybody → Conclusion + refining the document
 
 ##### 1.2. Step 1: Figuring Out Data
-
 1. [Completed] *Look up data sets* → https://www.kaggle.com/datasets/steve1215rogg/student-lifestyle-dataset
 2. *Wrangle data sets*
 3. *Exploratory data analysis*— Literally explore data sets: Summary = min, max, mean/median/quartiles, “create view of `head` (first 10 entries?)”
