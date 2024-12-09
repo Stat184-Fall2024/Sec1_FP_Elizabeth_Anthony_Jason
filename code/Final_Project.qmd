@@ -20,8 +20,10 @@ summary(data)
 # Introduction
 
 ## Research Questions
+For our final project, we are interested in how a student's lifestyle affects their GPA. Our initial research question is "does having a higher number of sleep hours correlate with a higher GPA" and our second research question is "does having a higher number of social hours correlate with a lower GPA?"
 
 ## Data Introduction
+We are using a data set from the website Kaggle, which has a public catalog free for anyone to use. The specific data set that we landed on was student_lifestyle_dataset.csv. It has 2000 cases, each with a recorded value for seven variables about their daily lifestyle, including sleep hours, social hours, and GPA. Each case is identified by a number going from 1-2000.
 
 ## Analysis Outline
 
