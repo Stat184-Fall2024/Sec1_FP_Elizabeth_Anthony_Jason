@@ -28,15 +28,20 @@ distribution
 
 ## Research Questions
 
-For our final project, we are interested in how a student's lifestyle affects their GPA. Our initial research question is "does having a higher number of sleep hours correlate with a higher GPA" and our second research question is "does having a higher number of social hours correlate with a lower GPA?"
+For our final project, we are interested in how a student's lifestyle affects their GPA. Our initial research question is **"Does alcohol consumption on the weekend negatively impact GPA?"** and our second research question is **"do absences have a negative impact on GPA?"**
 
-We are correlating sleep hours and social hours with GPA instead of study hours because students are obviously wanting social lives, and study hours have a generally direct causal relationship to a higher GPA. Furthermore, there have been numerous studies done on that relationship before and we do not think we would bring anything new to the table with our analysis.
+We are correlating weekend alcohol consumption and absences with GPA instead of study because students are obviously wanting social lives, and we want to see if these variables have a negative causal relationship with GPA. We initially were going to do only study hours initially, but there have been already been numerous studies done on that relationship before and we do not think we would bring anything new to the table with our analysis.
 
-Even still, all four of those variables are intertwined in a student's lifestyle. Each variable comes with a trade-off for another. The more studying a student might do, the higher their GPA might be, but both their social and sleep hours would be diminished. The opposite is also true. We want to see just how much impact the latter two variables have on GPA.
+Many variables are intertwined in a student's lifestyle. Each variable comes with a trade-off for another. The less weekend alcohol consumption a student partakes in, the higher their GPA might be. The more absences a student has, the lower their GPA might be. The opposite is also true. We want to see just how much impact the latter two variables have on GPA.
 
 ## Data Introduction
 
-We are using a data set from the website Kaggle, which has a public catalog free for anyone to use. The specific data set that we landed on was student_lifestyle_dataset.csv. It is a dataset collected from August 2023 to May 2024 that monitored student's (primarily from India) lifestyle habits. It has 2000 cases, each with a recorded value for seven variables about their daily lifestyle, including sleep hours, social hours, and GPA. Each case is identified by a number going from 1-2000.
+We are using a data set from the website Kaggle, which has a public catalog free for anyone to use. The specific data set that we landed on was student_lifestyle_dataset.csv. It is a dataset collected by Sumit Kumar, a researcher from India for the academic year from August 2023 to May 2024 that monitored student's (primarily from India) lifestyle habits in college.
+
+It has 2000 cases each identified by a number going from 1-2000, with a recorded value for seven variables about their daily lifestyle, including ones of interest for us: sleep hours, social hours, and GPA (The author noted in a response to a comment that CGPA values were converted to GPA values to ensure usability for international researchers).
+
+Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's, but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset includes 33 variables with 396 cases.
+
 
 ## Analysis Outline
 
