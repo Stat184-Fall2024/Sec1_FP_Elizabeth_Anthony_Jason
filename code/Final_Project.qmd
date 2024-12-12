@@ -16,9 +16,9 @@ data_math <- read.csv("../data/student-mat.csv")
 data_port <- read.csv("../data/student-por.csv")
 merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
 clean <- merged%>%
-  select(school, sex, age, Walc = Walc.x, absences = absences.x, grade_math = G3.x, grade_port = G3.y)%>%
+  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y)%>%
   mutate(grade_average = (grade_math+grade_port)/2)%>%
-  select(school, sex, age, Walc, absences, grade_average)
+  mutate(grade_average = grade_average/20, grade_math = grade_math/20, grade_port = grade_port/20)
 distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
 distribution
 
