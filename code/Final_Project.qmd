@@ -5,17 +5,70 @@ format: html
 editor: visual
 ---
 
+<<<<<<< Updated upstream
+=======
+```{r}
+#| message: false
+#| echo: false
+#| warning: false
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+data_math <- read.csv("../data/student-mat.csv")
+data_port <- read.csv("../data/student-por.csv")
+merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
+clean <- merged%>%
+  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y)%>%
+  mutate(grade_average = (grade_math+grade_port)/2)%>%
+  mutate(grade_average = grade_average*5, grade_math = grade_math*5, grade_port = grade_port*5)
+distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
+distribution
+
+```
+
+>>>>>>> Stashed changes
 # Introduction
 
 ## Research Questions
 
 ## Data Introduction
 
+<<<<<<< Updated upstream
+=======
+We are using a data set from the website Kaggle, which has a public catalog free for anyone to use. The specific data set that we landed on was student_lifestyle_dataset.csv. It is a dataset collected by Sumit Kumar, a researcher from India for the academic year from August 2023 to May 2024 that monitored student's (primarily from India) lifestyle habits in college.
+
+It has 2000 cases each identified by a number going from 1-2000, with a recorded value for seven variables about their daily lifestyle, including ones of interest for us: sleep hours, social hours, and GPA (The author noted in a response to a comment that CGPA values were converted to GPA values to ensure usability for international researchers).
+
+Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's, but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset includes 33 variables with 396 cases.
+
+>>>>>>> Stashed changes
 ## Analysis Outline
 
 # Data Analysis
 
-## Research Question #1
+## Drinking on Weekends vs Average Grade
+
+```{r}
+ggplot( #Set our axis and data
+  data = clean,
+  mapping = aes(
+    x = factor(Walc),
+    y = grade_average,
+  )
+)+
+  geom_boxplot(size = .8)+
+  labs( #Label our data
+    x = "Level of Drinking on Weekends (1 being very low, 5 being very high)",
+    y = "Average Grade",
+    title = "Average Grade by Level of Drinking on Weekends"
+  )+
+  theme_bw()+
+  theme( #Move the legend
+    legend.position = "bottom",
+    panel.background = element_rect(fill = "#d5e0e0")
+  )
+
+```
 
 ## Findings For Question #1
 
