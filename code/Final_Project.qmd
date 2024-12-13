@@ -5,8 +5,6 @@ format: html
 editor: visual
 ---
 
-<<<<<<< Updated upstream
-=======
 ```{r}
 #| message: false
 #| echo: false
@@ -21,27 +19,30 @@ clean <- merged%>%
   select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y)%>%
   mutate(grade_average = (grade_math+grade_port)/2)%>%
   mutate(grade_average = grade_average*5, grade_math = grade_math*5, grade_port = grade_port*5)
+
 distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
 distribution
 
 ```
 
->>>>>>> Stashed changes
 # Introduction
 
 ## Research Questions
 
+For our final project, we are interested in how a student's lifestyle affects their GPA. Our initial research question is **"Does alcohol consumption on the weekend negatively impact GPA?"** and our second research question is **"do absences have a negative impact on GPA?"**
+
+We are correlating weekend alcohol consumption and absences with GPA instead of study because students are obviously wanting social lives, and we want to see if these variables have a negative causal relationship with GPA. We initially were going to do only study hours initially, but there have been already been numerous studies done on that relationship before and we do not think we would bring anything new to the table with our analysis.
+
+Many variables are intertwined in a student's lifestyle. Each variable comes with a trade-off for another. The less weekend alcohol consumption a student partakes in, the higher their GPA might be. The more absences a student has, the lower their GPA might be. The opposite is also true. We want to see just how much impact the latter two variables have on GPA.
+
 ## Data Introduction
 
-<<<<<<< Updated upstream
-=======
 We are using a data set from the website Kaggle, which has a public catalog free for anyone to use. The specific data set that we landed on was student_lifestyle_dataset.csv. It is a dataset collected by Sumit Kumar, a researcher from India for the academic year from August 2023 to May 2024 that monitored student's (primarily from India) lifestyle habits in college.
 
 It has 2000 cases each identified by a number going from 1-2000, with a recorded value for seven variables about their daily lifestyle, including ones of interest for us: sleep hours, social hours, and GPA (The author noted in a response to a comment that CGPA values were converted to GPA values to ensure usability for international researchers).
 
 Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's, but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset includes 33 variables with 396 cases.
 
->>>>>>> Stashed changes
 ## Analysis Outline
 
 # Data Analysis
