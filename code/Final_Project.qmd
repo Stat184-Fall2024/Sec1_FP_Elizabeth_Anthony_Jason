@@ -28,11 +28,14 @@ distribution
 
 ## Research Questions
 
-For our final project, we are interested in how a student's lifestyle affects their GPA. Our initial research question is **"Does alcohol consumption on the weekend negatively impact GPA?"** and our second research question is **"do absences have a negative impact on GPA?"**
+For our final project, we are interested in how a student's lifestyle affects their GPA. We consider two research questions: our initial research question is *"Does alcohol consumption on the weekend negatively impact GPA?"*, and to better understand the nature of variable distributions as well as to contrast the first research question, we consider a second research question *"Do absences have a negative impact on GPA?"*
 
-We are correlating weekend alcohol consumption and absences with GPA instead of study because students are obviously wanting social lives, and we want to see if these variables have a negative causal relationship with GPA. We initially were going to do only study hours initially, but there have been already been numerous studies done on that relationship before and we do not think we would bring anything new to the table with our analysis.
+We are correlating weekend alcohol consumption and absences with GPA instead of "study" (referring to study ours), since studying is...
+1. Obvious--- recommended by teachers, internet resources, and its benefits observed throughout one's precollege studies--- and thus completely redundant and uninformative, and 
+2. Because students who study have social lives (to some degree or other) and, given the novelty of the college experience and to drinking and parties in general, should be made aware of the impact it has had for other students, so that they might rethink the degree and/or frequency of their behaviors depending on the results of our data analysis.
 
-Many variables are intertwined in a student's lifestyle. Each variable comes with a trade-off for another. The less weekend alcohol consumption a student partakes in, the higher their GPA might be. The more absences a student has, the lower their GPA might be. The opposite is also true. We want to see just how much impact the latter two variables have on GPA.
+And one last consideration-- it should be noted that **behaviors have consequences.** While it's possible to "make up for" flawed behavior, the number of hours one can allocate is the sum of the hours in a day. Therefore, there is an innate tradeoff that will afflict every student. However, the degree of the tradeoff is what we will be considering. If the tradeoff for drinking yourself to sleep every night is a tentative 5\% decrease in GPA, that is magnitudes less important a realization compared to a 50\% decrease in GPA. Thus, our analysis will focus on deducing that degree of exigence, such that students can reduce the "flawed behavior", or at least deduce what went wrong in the event their actions had reprecussions. 
+
 
 ## Data Introduction
 
@@ -42,7 +45,6 @@ It has 2000 cases each identified by a number going from 1-2000, with a recorded
 
 Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's, but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset includes 33 variables with 396 cases.
 
-
 ## Analysis Outline
 
 # Data Analysis
@@ -51,7 +53,19 @@ Our second dataset is also from Kaggle. It is data collected from a survey in ma
 
 ## Findings For Question #1
 
-## Research Question #2
+## Impact of Absences on Grade Performace
+
+As we observed from our analysis of weekend alcohol consumption on GPA, there is a moderate inversely-proportional relationship between the "degree of drinking" of college students on weekends and their average performance between the two courses, Math and Portuguese. 
+
+However, as also mentioned during the previous data analysis, the difference is incremental with perhaps a (change figure: 10%) change in GPA between the most-infrequent and most-frequent drinkers. There are a number of ways to interpret this, as also mentioned in the previous data analysis: for starters, that the classes are relatively easy and thus the behavior quite unimpactful on the average GPA, or perhaps that students' perception of their drinking compared to others is completely off-kilter. Regardless, the lack of change in the data is concerning. 
+
+Our next question will resolve or reinforce some of our doubts: depending on the reported impact or lack thereof of absences on GPA, our certainty in the    may or may not waver. 
+
+Thus, we plan to investigate and judge several traits of the dataset with respect to itself, alcohol, and GPA:
+
+1. **Distribution of Absences:** It's important to consider the w
+
+
 
 ## Findings For Question #2
 
