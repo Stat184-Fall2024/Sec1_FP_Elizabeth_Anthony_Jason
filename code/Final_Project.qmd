@@ -15,9 +15,13 @@ library(tidyr)
 data_math <- read.csv("../data/student-mat.csv")
 data_port <- read.csv("../data/student-por.csv")
 merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
-clean <- merged%>%
-  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y)%>%
-  mutate(grade_average = (grade_math+grade_port)/2)%>%
+clean <- merged %>%
+  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y) %>%
+  mutate(absences_average = round((absences_math + absences_port) / 2)) %>%
+  mutate(abs_avg_group_5 = round(absences_average/5)*5) %>%
+  mutate(abs_math_group_5 = round(absences_math/5)*5) %>%
+  mutate(abs_port_group_5 = round(absences_port/5)*5) %>%
+  mutate(grade_average = (grade_math+grade_port)/2) %>%
   mutate(grade_average = grade_average/20, grade_math = grade_math/20, grade_port = grade_port/20)
 distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
 distribution
@@ -53,7 +57,7 @@ Our second dataset is also from Kaggle. It is data collected from a survey in ma
 
 ## Findings For Question #1
 
-## Impact of Absences on Grade Performace
+# Impact of Absences on Grade Performace
 
 As we observed from our analysis of weekend alcohol consumption on GPA, there is a moderate inversely-proportional relationship between the "degree of drinking" of college students on weekends and their average performance between the two courses, Math and Portuguese. 
 
@@ -63,11 +67,103 @@ Our next question will resolve or reinforce some of our doubts: depending on the
 
 Thus, we plan to investigate and judge several traits of the dataset with respect to itself, alcohol, and GPA:
 
-1. **Distribution of Absences:** It's important to consider the w
+1. **Distribution of Absences:** It's important to consider the degree of students' not attending. 
+
+2. **Absences vs GPA:** How does a comparable box plot of absences sharing the same scale as GPA compare?
+
+3. **Absences vs Alcohol:** Do these two variables correlate? If so, which order 
 
 
+## Distribution of Absences
 
-## Findings For Question #2
+```{r}
+#| fig-cap: Figure 2.1\:\ The distribution of absence frequencies for students. 
+
+# Create a histogram for the distribution of "average absences"
+ggplot(clean, aes(x = absences_average)) +
+  geom_histogram(binwidth = 5, fill = "skyblue", color = "black") +
+  labs(x = "Absences", y = "Frequency of Absences", title = "Distribution of Absence Frequencies") +
+  theme_minimal()
+```
+
+## Absences vs GPA
+
+```{r}
+#| fig-cap: Figure 2.2\:\ The number of absences ranges from 0 - 93. "Absence" is the mean across Math and Portugese. 
+
+# Average absences 
+ggplot( # Set our axis and data
+  data = clean,
+  mapping = aes(
+    x = factor(abs_avg_group_5),
+    y = grade_average,
+  )
+) +
+  geom_boxplot(size = .8)+
+  labs( # Label our data
+    x = "Number of School Absences",
+    y = "Average Grade",
+    title = "Effect of Absences on GPA"
+  ) +
+  theme_bw()+
+  theme( # Move the legend
+    legend.position = "bottom",
+    panel.background = element_rect(fill = "#d5e0e0")
+  )
+
+```
+
+The significance of absence data depends on the skew of the distribution. If the distribution is extraordinarily skewed, it is more challenging to deduce the impact of the behavior on GPA due to the relative lack of sample size. 
+
+```{r}
+#| fig-cap: Figure 2.3\:\ Effect of Absences in Either Class on Grade
+#| fig-subcap: 
+#|   - <i>(a) Effect of Absenses on Math Grade </i>
+#|   - <i>(b) Effect of Absences on Portugese Grade</i>
+#| layout-ncol: 2
+#| column: page
+
+# Math Absences
+ggplot( # Set our axis and data
+  data = clean,
+  mapping = aes(
+    x = factor(abs_math_group_5),
+    y = grade_math,
+  )
+) +
+  geom_boxplot(size = .8)+
+  labs( # Label our data
+    x = "Number of School Absences",
+    y = "Average Grade",
+  ) +
+  theme_bw()+
+  theme( # Move the legend
+    legend.position = "bottom",
+    panel.background = element_rect(fill = "#d5e0e0")
+  )
+
+# Portuguese Absences
+ggplot( # Set our axis and data
+  data = clean,
+  mapping = aes(
+    x = factor(abs_port_group_5),
+    y = grade_port,
+  )
+) +
+  geom_boxplot(size = .8)+
+  labs( # Label our data
+    x = "Number of School Absences",
+    y = "Average Grade",
+  ) +
+  theme_bw()+
+  theme( # Move the legend
+    legend.position = "bottom",
+    panel.background = element_rect(fill = "#d5e0e0")
+  )
+```
+
+## Absences vs Alcohol
+
 
 ## Conclusion
 
