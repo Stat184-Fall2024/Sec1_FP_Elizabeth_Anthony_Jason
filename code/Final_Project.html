@@ -117,14 +117,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="research-questions" class="level2">
 <h2 class="anchored" data-anchor-id="research-questions">Research Questions</h2>
 <p>For our final project, we are interested in how a student’s lifestyle affects their GPA. We consider two research questions: our initial research question is <em>“Does alcohol consumption on the weekend negatively impact GPA?”</em>, and to better understand the nature of variable distributions as well as to contrast the first research question, we consider a second research question <em>“Do absences have a negative impact on GPA?”</em></p>
-<p>We are correlating weekend alcohol consumption and absences with GPA instead of “study” (referring to study ours), since studying is… 1. Obvious— recommended by teachers, internet resources, and its benefits observed throughout one’s precollege studies— and thus completely redundant and uninformative, and 2. Because students who study have social lives (to some degree or other) and, given the novelty of the college experience and to drinking and parties in general, should be made aware of the impact it has had for other students, so that they might rethink the degree and/or frequency of their behaviors depending on the results of our data analysis.</p>
-<p>And one last consideration– it should be noted that <strong>behaviors have consequences.</strong> While it’s possible to “make up for” flawed behavior, the number of hours one can allocate is the sum of the hours in a day. Therefore, there is an innate tradeoff that will afflict every student. However, the degree of the tradeoff is what we will be considering. If the tradeoff for drinking yourself to sleep every night is a tentative 5% decrease in GPA, that is magnitudes less important a realization compared to a 50% decrease in GPA. Thus, our analysis will focus on deducing that degree of exigence, such that students can reduce the “flawed behavior”, or at least deduce what went wrong in the event their actions had reprecussions.</p>
+<p>We are correlating weekend alcohol consumption and absences with GPA instead of “study” (referring to study ours), since studying is…</p>
+<ol type="1">
+<li><p>Obvious— recommended by teachers, internet resources, and its benefits observed throughout one’s precollege studies— and thus completely redundant and uninformative, and</p></li>
+<li><p>Because students who study have social lives (to some degree or other) and, given the novelty of the college experience and to drinking and parties in general, should be made aware of the impact it has had for other students, so that they might rethink the degree and/or frequency of their behaviors depending on the results of our data analysis.</p></li>
+</ol>
+<p>And one last consideration– it should be noted that <strong>behaviors have consequences.</strong> While it’s possible to “make up for” flawed behavior, the number of hours one can allocate is the sum of the hours in a day. Therefore, there is an innate tradeoff that will afflict every student. However, the degree of the trade-off is what we will be considering. If the tradeoff for drinking yourself to sleep every night is a tentative 5% decrease in GPA, that is magnitudes less important a realization compared to a 50% decrease in GPA. Thus, our analysis will focus on deducing that degree of exigence, such that students can reduce the “flawed behavior”, or at least deduce what went wrong in the event their actions had repercussions.</p>
 </section>
 <section id="data-introduction" class="level2">
 <h2 class="anchored" data-anchor-id="data-introduction">Data Introduction</h2>
 <p>We are using a data set from the website Kaggle, which has a public catalog free for anyone to use. The specific data set that we landed on was student_lifestyle_dataset.csv. It is a dataset collected by Sumit Kumar, a researcher from India for the academic year from August 2023 to May 2024 that monitored student’s (primarily from India) lifestyle habits in college.</p>
 <p>It has 2000 cases each identified by a number going from 1-2000, with a recorded value for seven variables about their daily lifestyle, including ones of interest for us: sleep hours, social hours, and GPA (The author noted in a response to a comment that CGPA values were converted to GPA values to ensure usability for international researchers).</p>
-<p>Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv’s, but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset includes 33 variables with 396 cases.</p>
+<p>Our second data set is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv’s, but we merged the two to create one big data set and will use that in our analysis. Our final merged data set includes 33 variables with 396 cases.</p>
 </section>
 <section id="analysis-outline" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-outline">Analysis Outline</h2>
@@ -142,13 +146,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="impact-of-absences-on-grade-performace" class="level1 page-columns page-full">
 <h1>Impact of Absences on Grade Performace</h1>
 <p>As we observed from our analysis of weekend alcohol consumption on GPA, there is a moderate inversely-proportional relationship between the “degree of drinking” of college students on weekends and their average performance between the two courses, Math and Portuguese.</p>
-<p>However, as also mentioned during the previous data analysis, the difference is incremental with perhaps a (change figure: 10%) change in GPA between the most-infrequent and most-frequent drinkers. There are a number of ways to interpret this, as also mentioned in the previous data analysis: for starters, that the classes are relatively easy and thus the behavior quite unimpactful on the average GPA, or perhaps that students’ perception of their drinking compared to others is completely off-kilter. Regardless, the lack of change in the data is concerning.</p>
-<p>Our next question will resolve or reinforce some of our doubts: depending on the reported impact or lack thereof of absences on GPA, our certainty in the may or may not waver.</p>
-<p>Thus, we plan to investigate and judge several traits of the dataset with respect to itself, alcohol, and GPA:</p>
+<p>However, as also mentioned during the previous data analysis, the difference is incremental with perhaps a 10% change in GPA between the most-infrequent and most-frequent drinkers. There are a number of ways to interpret this, as also mentioned in the previous data analysis: for starters, that the classes are relatively easy and thus the behavior quite unimpactful on the average GPA, or perhaps that students’ perception of their drinking compared to others is completely off-kilter. Regardless, the lack of change in the data is concerning.</p>
+<p>Our next question will resolve or reinforce some of our doubts: depending on the reported impact or lack thereof of absences on GPA, our certainty in the conclusions for Alcohol to GPA may or may not waver.</p>
+<p>Thus, we plan to investigate and judge several traits of the data set with respect to itself, alcohol, and GPA:</p>
 <ol type="1">
-<li><p><strong>Distribution of Absences:</strong> It’s important to consider the degree of students’ not attending.</p></li>
+<li><p><strong>Distribution of Absences:</strong> It’s important to consider which parts of the distribution are outliers, if any.</p></li>
 <li><p><strong>Absences vs GPA:</strong> How does a comparable box plot of absences sharing the same scale as GPA compare?</p></li>
-<li><p><strong>Absences vs Alcohol:</strong> Do these two variables correlate? If so, which order</p></li>
+<li><p><strong>Absences vs Alcohol:</strong> Are these two variables correlated?</p></li>
 </ol>
 <section id="distribution-of-absences" class="level2">
 <h2 class="anchored" data-anchor-id="distribution-of-absences">Distribution of Absences</h2>
@@ -156,115 +160,141 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram for the distribution of "average absences"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(clean, <span class="fu">aes</span>(<span class="at">x =</span> absences_average)) <span class="sc">+</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Absences"</span>, <span class="at">y =</span> <span class="st">"Frequency of Absences"</span>, <span class="at">title =</span> <span class="st">"Distribution of Absence Frequencies"</span>) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Absences"</span>, <span class="at">y =</span> <span class="st">"Frequency of Absences"</span>, <span class="at">title =</span> <span class="st">"Distribution of Average Absence Frequencies"</span>) <span class="sc">+</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Final_Project_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Figure 2.1:&nbsp;The distribution of absence frequencies for students.</figcaption>
+<figcaption>Figure 2.1:&nbsp;The distribution of absence frequencies for students, calculated by the median absense across both classes.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here, we observe that absences</p>
+<p>One flaw of this visualization is that skewed-absences are flattened by the calculation method used: in cases where a student is absent predominantly in one class or the other, this distribution would not even indicate their being</p>
+</section>
+<section id="absences-vs-gpa" class="level2">
+<h2 class="anchored" data-anchor-id="absences-vs-gpa">Absences vs GPA</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clean_v2 <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">abs_avg_group_5 =</span> <span class="fu">round</span>(absences_average<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Average absences </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Set our axis and data</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> clean_v2,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">factor</span>(abs_avg_group_5),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> grade_average,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Effect of Absences on GPA"</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Move the legend</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 2.3:&nbsp;The number of absences ranges from 0 - 93— “Absence” is the mean across Math and Portugese.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The significance of absence data depends on the skew of the distribution. If the distribution is extraordinarily skewed, it is more challenging to deduce the impact of the behavior on GPA due to the relative lack of sample size. Tests</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>median_math <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">abs_math_group_5 =</span> <span class="fu">round</span>(absences_math<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(abs_math_group_5) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">med_math =</span> <span class="fu">median</span>(grade_math))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>median_port <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">abs_port_group_5 =</span> <span class="fu">round</span>(absences_port<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(abs_port_group_5) <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">med_port =</span> <span class="fu">median</span>(grade_port))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Math Absences</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> median_math, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_math_group_5, <span class="at">y =</span> med_math, <span class="at">linetype =</span> <span class="st">"Math"</span>), <span class="at">color =</span> <span class="st">"yellow"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> median_math, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_math_group_5, <span class="at">y =</span> med_math), <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> median_port, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_port_group_5, <span class="at">y =</span> med_port, <span class="at">linetype =</span> <span class="st">"Portugese"</span>), <span class="at">color =</span> <span class="st">"violet"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> median_port, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_port_group_5, <span class="at">y =</span> med_port), <span class="at">color =</span> <span class="st">"purple"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences"</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Median Grade"</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Absences vs Class Grade for Each Class"</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Line Types"</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Math"</span> <span class="ot">=</span> <span class="st">"solid"</span>, <span class="st">"Portugese"</span> <span class="ot">=</span> <span class="st">"dotdash"</span>)  <span class="co"># Define linetypes</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 2.4:&nbsp;Effect of Absences in Either Class on Grade</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="absences-vs-gpa" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="absences-vs-gpa">Absences vs GPA</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average absences </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Set our axis and data</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> clean,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">factor</span>(abs_avg_group_5),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> grade_average,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">size =</span> .<span class="dv">8</span>)<span class="sc">+</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences"</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade"</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Effect of Absences on GPA"</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Move the legend</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Figure 2.2:&nbsp;The number of absences ranges from 0 - 93. “Absence” is the mean across Math and Portugese.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The significance of absence data depends on the skew of the distribution. If the distribution is extraordinarily skewed, it is more challenging to deduce the impact of the behavior on GPA due to the relative lack of sample size.</p>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Math Absences</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Set our axis and data</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> clean,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">factor</span>(abs_math_group_5),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> grade_math,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">size =</span> .<span class="dv">8</span>)<span class="sc">+</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Move the legend</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Portuguese Absences</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Set our axis and data</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> clean,</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">factor</span>(abs_port_group_5),</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> grade_port,</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">size =</span> .<span class="dv">8</span>)<span class="sc">+</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences"</span>,</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade"</span>,</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Move the legend</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="absences-vs-alcohol" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="absences-vs-alcohol">Absences vs Alcohol</h2>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>abs_alc_ct <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Walc, absences_average) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(absences_average, Walc) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> abs_alc_ct, </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> absences_average, </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> Walc, </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> count</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">select</span>(clean, Walc, absences_average), <span class="fu">aes</span>(<span class="at">x =</span> absences_average, <span class="at">y =</span> Walc)) <span class="sc">+</span>  </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d_filled</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell column-page quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption><i>(a) Effect of Absenses on Math Grade </i></figcaption>
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption><i>(a) Scatterplot of Absolute Frequencies</i></figcaption>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
-<figcaption><i>(b) Effect of Absences on Portugese Grade</i></figcaption>
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+<figcaption><i>(b) Heat Map of Relative Frequencies</i></figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Figure 2.3:&nbsp;Effect of Absences in Either Class on Grade</p>
+<p>Figure 2.5:&nbsp;Correlation Between Absences and Alcohol (Filtered for <code>count &gt; 1</code>)</p>
 </div>
 </div>
 </div>
-</section>
-<section id="absences-vs-alcohol" class="level2">
-<h2 class="anchored" data-anchor-id="absences-vs-alcohol">Absences vs Alcohol</h2>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
