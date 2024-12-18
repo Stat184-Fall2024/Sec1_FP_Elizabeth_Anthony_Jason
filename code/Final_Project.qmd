@@ -1,5 +1,5 @@
 ---
-title: "Final_Project"
+title: "Stat 184 Final Project: The Effects of Weekend Alcohol Consumption and Absences on GPA"
 author: "Anthony B., Elizabeth S., Jason Z."
 format: html
 editor: visual
@@ -12,8 +12,8 @@ editor: visual
 library(ggplot2)
 library(dplyr)
 library(tidyr)
-data_math <- read.csv("../data/student-mat.csv")
-data_port <- read.csv("../data/student-por.csv")
+data_math <- read.csv("../downloads/archive (1)/student-mat.csv")
+data_port <- read.csv("../downloads/archive (1)/student-por.csv")
 merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
 clean <- merged %>%
   select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y) %>%
@@ -22,7 +22,6 @@ clean <- merged %>%
   mutate(grade_average = grade_average/20, grade_math = grade_math/20, grade_port = grade_port/20)
 distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
 distribution
-
 ```
 
 # Introduction
@@ -31,13 +30,13 @@ distribution
 
 For our final project, we are interested in how a student's lifestyle affects their GPA. We consider two research questions: our initial research question is *"Does alcohol consumption on the weekend negatively impact GPA?"*, and to better understand the nature of variable distributions as well as to contrast the first research question, we consider a second research question *"Do absences have a negative impact on GPA?"*
 
-We are correlating weekend alcohol consumption and absences with GPA instead of "study" (referring to study ours), since studying is... 
+We are correlating weekend alcohol consumption and absences with GPA instead of "study" (referring to study ours), since studying is...
 
-1. Obvious--- recommended by teachers, internet resources, and its benefits observed throughout one's precollege studies--- and thus completely redundant and uninformative, and 
+1.  Obvious--- recommended by teachers, internet resources, and its benefits observed throughout one's studies, college or not, and therefore our research would be redundant, and
 
-2. Because students who study have social lives (to some degree or other) and, given the novelty of the college experience and to drinking and parties in general, should be made aware of the impact it has had for other students, so that they might rethink the degree and/or frequency of their behaviors depending on the results of our data analysis.
+2.  Because students who study have social lives (to some degree or other) and, given the novelty of the college experience and to drinking and parties in general, should be made aware of the impact it has had for other students. With our research, we hope that they might rethink the degree and/or frequency of their behaviors depending on the results of our data analysis.
 
-And one last consideration-- it should be noted that **behaviors have consequences.** While it's possible to "make up for" flawed behavior, the number of hours one can allocate is the sum of the hours in a day. Therefore, there is an innate tradeoff that will afflict every student. However, the degree of the trade-off is what we will be considering. If the tradeoff for drinking yourself to sleep every night is a tentative 5% decrease in GPA, that is magnitudes less important a realization compared to a 50% decrease in GPA. Thus, our analysis will focus on deducing that degree of exigence, such that students can reduce the "flawed behavior", or at least deduce what went wrong in the event their actions had repercussions.
+One last consideration: it should be noted that **behaviors have consequences.** While it's possible to "make up for" flawed behavior, the number of hours one can allocate is the sum of the hours in a day. Therefore, there is an innate trade-off that will afflict every student. However, the degree of the trade-off is what we will be considering. If the trade-off for drinking every night is a tentative 5% decrease in GPA, that is magnitudes less important a realization compared to a 50% decrease in GPA. Thus, our analysis will focus on deducing that degree of exigence, such that students can reduce the "flawed behavior", or at least deduce what went wrong in the event their actions had repercussions.
 
 ## Data Introduction
 
@@ -48,6 +47,14 @@ It has 2000 cases each identified by a number going from 1-2000, with a recorded
 Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's, but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset includes 33 variables with 396 cases.
 
 ## Analysis Outline
+
+First we are going to look at the analysis of weekend alcohol consumption (WALC) on GPA. Going into this analysis, we are hypothesizing that there is a negative correlation between the two, that the more alcohol consumption a student partakes in, the lower their GPA would be.
+
+Second, we will look at the impact of absences on GPA as well. At face-level, we think that absences will also negatively correlate with GPA, as we think that going to class is interrelated to succeeding academically.
+
+**FAIR and CARE Principles**
+
+Our data meets the FAIR principles because we state our dataset title and exact file name so that our readers can use the exact same dataset if they want for their own research. We have a detailed description of how we found our data and what we intended to use it for. Our data was collected through surveys in math and Portuguese language courses. It did not associate itself with American Indigenous groups.
 
 # Data Analysis
 
@@ -121,7 +128,7 @@ Our next question will resolve or reinforce some of our doubts: depending on the
 
 Thus, we plan to investigate and judge several traits of the dataset with respect to itself, alcohol, and GPA:
 
-1.  **Distribution of Absences:** It's important to consider which parts of the distribution are outliers, if any. 
+1.  **Distribution of Absences:** It's important to consider which parts of the distribution are outliers, if any.
 
 2.  **Absences vs GPA:** How does a comparable box plot of absences sharing the same scale as GPA compare?
 
@@ -140,13 +147,13 @@ ggplot(clean, aes(x = absences_average)) +
   theme_minimal()
 ```
 
-Here, we observe that the vast majority of students--- around 95% of them--- miss between 0 and 15 absences Around three-foruths of students miss less than 5 classes. The range of students absent for between 10 and 15 classes accounts for around 7% of the absences. Past that point, the range between between 15 and 20 absences accounts for about 3% of the dataset, which comprise our outliers. Past *that* are our extreme outliers: around 2% of the dataset are outliers ranging from 20 and 30 absences, and between 40 and 45 absences accounting for another 1% of the dataset. 
+Here, we observe that the vast majority of students--- around 95% of them--- miss between 0 and 15 absences Around three-foruths of students miss less than 5 classes. The range of students absent for between 10 and 15 classes accounts for around 7% of the absences. Past that point, the range between between 15 and 20 absences accounts for about 3% of the dataset, which comprise our outliers. Past *that* are our extreme outliers: around 2% of the dataset are outliers ranging from 20 and 30 absences, and between 40 and 45 absences accounting for another 1% of the dataset.
 
 With that in mind...
 
-- The students missing between 0 and 10 classes can be considered the "effective student body" for absence-based conclusions, 
-- The range between 10 and 20 the "regular" outliers, and 
-- Any student absent for more than 20 classes can be considered an extreme outlier. 
+-   The students missing between 0 and 10 classes can be considered the "effective student body" for absence-based conclusions,
+-   The range between 10 and 20 the "regular" outliers, and
+-   Any student absent for more than 20 classes can be considered an extreme outlier.
 
 However, it is important to note that these statistics are deflated somewhat. As the histogram illustrates "Average Absences"--- the median between absences in Math and Portuguese--- the cases where a student is absent predominantly in one class or the other are not distinguished. Therefore, the distribution for each individual class is likely more skewed than the distribution due to this graph flattening those outliers through the averaging process.
 
@@ -154,14 +161,14 @@ However, it is important to note that these statistics are deflated somewhat. As
 
 ```{r}
 #| echo: false
-#| fig-cap: Figure 2.3\:\ Effect of Absences on GPA
+#| fig-cap: Figure 2.2\:\ Effect of Absences on GPA
 
 # Flooring the data to the nearest 5 (e.g. 4 -> 0)
 clean_v2 <- clean %>%
   mutate(abs_avg_group_5 = round((absences_average)/5)*5)
 
 
-# Average absences 
+# "Average Absences" boxplot
 ggplot( # Set our axis and data
   data = clean_v2,
   mapping = aes(
@@ -182,23 +189,23 @@ ggplot( # Set our axis and data
   )
 ```
 
-To add some context to this data, the "absence" statistic in this dataset is a number ranging from 0 - 93, with 93 being the number of days in a semester. Also, each histogram represents the minimum of a bin-width of 5; for example, "0" indicates the distribution of data between 0 and 5 absences. And with that being said, the trend this dataset is illustrating is in-line with both our expected reality and the alcohol distribution, for within the "normal range" specified earlier (Section: "Distribution of Absences"). 
+To add some context to this data, the "absence" statistic in this dataset is a number ranging from 0 - 93, with 93 being the number of days in a semester. Also, each histogram represents the minimum of a bin-width of 5; for example, "0" indicates the distribution of data between 0 and 5 absences. And with that being said, the trend this dataset is illustrating is in-line with both our expected reality and the alcohol distribution, for within the "normal range" specified earlier (Section: "Distribution of Absences").
 
-- Students missing between 0 and 15 classes are well-positioned to achieve normal grades. Though slightly less likely to obtain stores well above the median (a 3rd quadrant of about 0.7 versus 0.65), students within the 10 and 15 absence range are equally poised to perform about or slightly below the median grade.  
+-   Students missing between 0 and 15 classes are well-positioned to achieve normal grades. Though slightly less likely to obtain stores well above the median (a 3rd quadrant of about 0.7 versus 0.65), students within the 10 and 15 absence range are equally poised to perform about or slightly below the median grade.
 
-- Students missing between 15 and 20 courses see a drop-off on all fronts, be it their ability to exceed or even just obtaining the median. It can be observed that the drop-off is only a 7%-or-so dip in students' average grade, from roughly 57% to roughly 50% median. 
+-   Students missing between 15 and 20 courses see a drop-off on all fronts, be it their ability to exceed or even just obtaining the median. It can be observed that the drop-off is only a 7%-or-so dip in students' average grade, from roughly 57% to roughly 50% median.
 
-- Students missing between 20 and 25 courses see a further drop-off, reaching a 10%-or-so dip from the initial 57% to a low 47% median average grade. This is at the end of the "outliers" specified earlier, and still affirms the inverse correlation between absences and grade. 
+-   Students missing between 20 and 25 courses see a further drop-off, reaching a 10%-or-so dip from the initial 57% to a low 47% median average grade. This is at the end of the "outliers" specified earlier, and still affirms the inverse correlation between absences and grade.
 
-- Students exceeding 25 absences have a comparable distribution of GPA compared to students missing between 10 and 15 courses. Notably, this *exceeds* the performance of students missing between 15 and 25 courses, and therefore are in-contradiction to our hypothesis. However, since these are outliers *even among the "Distribution of Absences" dataset*, these outliers are infrequent enough to not meaningfully contradict our hypothesis--- we can safely ignore them as the product of special circumstance. 
+-   Students exceeding 25 absences have a comparable distribution of GPA compared to students missing between 10 and 15 courses. Notably, this *exceeds* the performance of students missing between 15 and 25 courses, and therefore are in-contradiction to our hypothesis. However, since these are outliers *even among the "Distribution of Absences" dataset*, these outliers are infrequent enough to not meaningfully contradict our hypothesis--- we can safely ignore them as the product of special circumstance.
 
-Overall, in both instances, going to the extremes in their respective flawed behavior drops off their median GPA by about 7%. The distribution by-and-large affirms the conclusions arrived at in the first hypothesis: alcohol *is* affecting student performance, just not that substantially... but is that really the case? Is the problem that alcohol, absence, and all these flawed behaviors negligibly affect grade outcomes? 
+Overall, in both instances, going to the extremes in their respective flawed behavior drops off their median GPA by about 7%. The distribution by-and-large affirms the conclusions arrived at in the first hypothesis: alcohol *is* affecting student performance, just not that substantially... but is that really the case? Is the problem that alcohol, absence, and all these flawed behaviors negligibly affect grade outcomes?
 
 ```{r}
 #| echo: false
-#| fig-cap: Figure 2.4\:\ Effect of Absences in Either Class on Grade
+#| fig-cap: Figure 2.3\:\ Effect of Absences in Either Class on Grade
 
-# Creating "Distribution Groups" 
+# Creating "Distribution Groups" of MATH and PORT
 median_math <- clean %>%
     mutate(abs_math_group_5 = round((absences_math)/5)*5) %>%
     group_by(abs_math_group_5) %>%
@@ -212,6 +219,7 @@ median_port <- clean %>%
 
 # Math Absences
 ggplot() +
+  # Adding lines & points for both MATH and PORT absences
   geom_line(data = median_math, mapping = aes(x = abs_math_group_5, y = med_math, linetype = "Math"), color = "yellow", linewidth = 1) + 
   geom_point(data = median_math, mapping = aes(x = abs_math_group_5, y = med_math), color = "orange", size = 2.5) + 
   geom_line(data = median_port, mapping = aes(x = abs_port_group_5, y = med_port, linetype = "Portugese"), color = "violet", linewidth = 1) + 
@@ -233,19 +241,18 @@ ggplot() +
 
 This visualization suggests that the reason why grade may or may not diminish because of flawed behavior can be explained by the "degree of participation" required for a course. One (arbitrary) way to define classes as "participatory" versus not is with the drop-off of grade between the the data points accounting for "averages" across 90% of students. In the above line plot, the drop-off is...
 
-- -5% (`0-5` to `5-10`), -5% (`5-10` to `10-15`), and -13% (`10-15` to `15-20`) for Portuguese students, and
-- -0% (`0-5` to `5-10`), -5% (`5-10` to `10-15`), and -10% (`10-15` to `15-20`) for Math students. 
+-   -5% (`0-5` to `5-10`), -5% (`5-10` to `10-15`), and -13% (`10-15` to `15-20`) for Portuguese students, and
+-   -0% (`0-5` to `5-10`), -5% (`5-10` to `10-15`), and -10% (`10-15` to `15-20`) for Math students.
 
-As can be seen, in a course like Portuguese where there is a grade-response for missing an additional 5 courses on average (0-5 to 5-10 courses)--- which we might call a "strong-participatory" course--- there is a steeper drop-off for students taking the behavior to the extreme. In this case, we see a -13% Portuguese drop-off compared to -10% for a Math drop-off. 
+As can be seen, in a course like Portuguese where there is a grade-response for missing an additional 5 courses on average (0-5 to 5-10 courses)--- which we might call a "strong-participatory" course--- there is a steeper drop-off for students taking the behavior to the extreme. In this case, we see a -13% Portuguese drop-off compared to -10% for a Math drop-off.
 
-Therefore, the data sets support the interpretation that the relatively-small drop-off is not just a product of flawed behavior being relatively-inconsequential, but rather the class's "degree of participation" muffling the effects of these behaviors. In other words, these effects will ramp up with the difficulty of the course, as participation becomes more and more mandatory. And one last thing: to delve just deep enough into statistics to reject "this data set is an outlier" as a counterargument, the sample size of 396 is sufficient for statistical significance, and even the range between 15 and 20 has `n>10` data. 
-
+Therefore, the data sets support the interpretation that the relatively-small drop-off is not just a product of flawed behavior being relatively-inconsequential, but rather the class's "degree of participation" muffling the effects of these behaviors. In other words, these effects will ramp up with the difficulty of the course, as participation becomes more and more mandatory. And one last thing: to delve just deep enough into statistics to reject "this data set is an outlier" as a counterargument, the sample size of 396 is sufficient for statistical significance, and even the range between 15 and 20 has `n>10` data.
 
 ## Absences vs Alcohol
 
 ```{r}
 #| echo: false
-#| fig-cap: Figure 2.5\:\ Correlation Between Absences and Alcohol (Filtered for `count > 1`)
+#| fig-cap: Figure 2.4\:\ Correlation Between Absences and Alcohol (Filtered for `count > 1`)
 #| fig-subcap: 
 #|   - <i>(a) Point Plot of Absolute Frequencies</i>
 #|   - <i>(b) Heat Map of Relative Frequencies</i>
@@ -259,7 +266,7 @@ abs_alc_ct <- clean %>%
   mutate(count = n()) %>%
   filter(count > 1)
 
-# Creating a "Geom Point" grid excluding the few un-supported points
+# Creating a "Geom Point" grid for "Absences vs Alcohol" (excluding the few un-supported points)
 ggplot(
   data = abs_alc_ct, 
   mapping = aes(
@@ -275,12 +282,12 @@ ggplot(data = select(clean, Walc, absences_average), aes(x = absences_average, y
   geom_density_2d_filled() 
 ```
 
-To consider one last element, we can visualize any correlation between absences and alcohol through two visualizations--- a "Point Plot" indicating the weight of various absences and weekend alcohol consumption (Walc), and a heat map indicating the distribution of density across the former visualization. The "Point Plot" indicates that the data is most concentrated along "little Walc": the bottom row with `Walc = 1` has a number of absences ranging from 0-5 which capture a large percentage--- maybe even half--- of the total number of students. Then, there is a little vertical variation in Walc among students who miss between 0 and 5 classes: students who miss between 0 and 3 classes in particular have drinking habits ranging from 2 all the way to 4. In this case, the heat map is a much better visualization: observe how the density climbs upwards around that 0 to 3 absence range, and seemingly doesn't grow proportionally to absences. 
+To consider one last element, we can visualize any correlation between absences and alcohol through two visualizations--- a "Point Plot" indicating the weight of various absences and weekend alcohol consumption (Walc), and a heat map indicating the distribution of density across the former visualization. The "Point Plot" indicates that the data is most concentrated along "little Walc": the bottom row with `Walc = 1` has a number of absences ranging from 0-5 which capture a large percentage--- maybe even half--- of the total number of students. Then, there is a little vertical variation in Walc among students who miss between 0 and 5 classes: students who miss between 0 and 3 classes in particular have drinking habits ranging from 2 all the way to 4. In this case, the heat map is a much better visualization: observe how the density climbs upwards around that 0 to 3 absence range, and seemingly doesn't grow proportionally to absences.
 
-The data seems to perhaps have a vertical correlation between drinking and absences, but that's just because, as revealed by Figure 2.1, that's three-quarters of the student sample size, so naturally the density there will be greater. Overall, there is a distinct *lack* of any correlation between weekend alcohol consumption and absences. Therefore, there is, at least in the constraints of this study, no need to be concerned with your social life affecting *class attendance*, just GPA. 
-
+The data seems to perhaps have a vertical correlation between drinking and absences, but that's just because, as revealed by Figure 2.1, that's three-quarters of the student sample size, so naturally the density there will be greater. Overall, there is a distinct *lack* of any correlation between weekend alcohol consumption and absences. Therefore, there is, at least in the constraints of this study, no need to be concerned with your social life affecting *class attendance*, just GPA.
 
 ## Conclusion
+
 
 For our analysis of Weekend Drinking Habits and Average Grade, we can draw two conclusions:
 
@@ -290,127 +297,12 @@ For our analysis of Weekend Drinking Habits and Average Grade, we can draw two c
 
 In the case of absences and GPA, we can conclusively express two concepts: 
 
-1. First, we observe a -7% drop-off in the median average grade for students missing 15 to 20 classes, and just a 3% drop-off in the median average grade for students missing between 10 and 15 classes. Given that only 10% of students even miss between 10 and 20 classes, and only 3% of students between 15 and 20 classes, it is safe to say that for the majority of students, having to miss a few courses does not substantially impact their performance in class. 
+1.  First, we observe a -7% drop-off in the median average grade for students missing 15 to 20 classes, and just a 3% drop-off in the median average grade for students missing between 10 and 15 classes. Given that only 10% of students even miss between 10 and 20 classes, and only 3% of students between 15 and 20 classes, it is safe to say that for the majority of students, having to miss a few courses does not substantially impact their performance in class.
 
-2. That being said, **that sentiment is upended for courses with a greater "degree of participation".** For strong-participatory courses, such as the Math course considered in this dataset, even missing 5-10 classes in opposed to 0-5 diminished students' median average GPA by 5%, indicating that the impact of absences scales with the difficulty of the course. Therefore, for the courses where you would most struggle to pass, attendance is key. 
+2.  That being said, **that sentiment is upended for courses with a greater "degree of participation".** For strong-participatory courses, such as the Math course considered in this dataset, even missing 5-10 classes in opposed to 0-5 diminished students' median average GPA by 5%, indicating that the impact of absences scales with the difficulty of the course. Therefore, for the courses where you would most struggle to pass, attendance is key.
 
 
 # Code Appendix
 
-## Absences
-
-#### Distribution of Absences
-
-```{r}
-#| eval: false
-#| fig-cap: Figure 2.1\:\ The distribution of absence frequencies for students, calculated by the median absense across both classes. 
-
-# Create a histogram for the distribution of "average absences"
-ggplot(clean, aes(x = absences_average)) +
-  geom_histogram(breaks = seq(0, 50, by = 5), binwidth = 5, fill = "skyblue", color = "black") +
-  labs(x = "Absences (Bin Width = 5)", y = "Frequency of Absences", title = "Histogram of Average Absence Frequencies") +
-  theme_minimal()
-```
-
-#### Absences vs GPA
-
-```{r}
-#| eval: false
-#| fig-cap: Figure 2.3\:\ Effect of Absences on GPA
-
-# Flooring the data to the nearest 5 (e.g. 4 -> 0)
-clean_v2 <- clean %>%
-  mutate(abs_avg_group_5 = round((absences_average)/5)*5)
-
-
-# Average absences 
-ggplot( # Set our axis and data
-  data = clean_v2,
-  mapping = aes(
-    x = factor(abs_avg_group_5),
-    y = grade_average,
-  )
-) +
-  geom_boxplot(size = .8) +
-  labs( # Label our data
-    x = "Number of School Absences",
-    y = "Average Grade",
-    title = "Average Absences vs GPA" 
-  ) +
-  theme_bw() +
-  theme( # Move the legend
-    legend.position = "bottom",
-    panel.background = element_rect(fill = "#d5e0e0")
-  )
-```
-
-```{r}
-#| eval: false
-#| fig-cap: Figure 2.4\:\ Effect of Absences in Either Class on Grade
-
-# Creating "Distribution Groups" 
-median_math <- clean %>%
-    mutate(abs_math_group_5 = round((absences_math)/5)*5) %>%
-    group_by(abs_math_group_5) %>%
-    summarise(med_math = median(grade_math))
-
-median_port <- clean %>%
-    mutate(abs_port_group_5 = round((absences_port)/5)*5) %>%
-    group_by(abs_port_group_5) %>%
-    summarise(med_port = median(grade_port))
-
-
-# Math Absences
-ggplot() +
-  geom_line(data = median_math, mapping = aes(x = abs_math_group_5, y = med_math, linetype = "Math"), color = "yellow", linewidth = 1) + 
-  geom_point(data = median_math, mapping = aes(x = abs_math_group_5, y = med_math), color = "orange", size = 2.5) + 
-  geom_line(data = median_port, mapping = aes(x = abs_port_group_5, y = med_port, linetype = "Portugese"), color = "violet", linewidth = 1) + 
-  geom_point(data = median_port, mapping = aes(x = abs_port_group_5, y = med_port), color = "purple", size = 2.5) + 
-  labs( # Label our data
-    x = "Number of School Absences (Out of 93)",
-    y = "Median Grade",
-    title = "Absences vs Class Grade (Separated by Class)"
-  ) +
-  scale_linetype_manual(
-    name = "Line Types",
-    values = c("Math" = "solid", "Portugese" = "dotdash")  # Defining linetypes
-  ) +
-  theme_bw() +
-  theme( 
-    panel.background = element_rect(fill = "#d5e0e0")
-  )
-```
-
-
-#### Absences vs Alcohol
-
-```{r}
-#| eval: false
-#| fig-subcap: 
-#|   - <i>(a) Point Plot of Absolute Frequencies</i>
-#|   - <i>(b) Heat Map of Relative Frequencies</i>
-#| layout-ncol: 2
-#| column: page
-
-# Creating a count for each (Walc, absences_average) point
-abs_alc_ct <- clean %>% 
-  select(Walc, absences_average) %>%
-  group_by(absences_average, Walc) %>%
-  mutate(count = n()) %>%
-  filter(count > 1)
-
-# Creating a "Geom Point" grid excluding the few un-supported points
-ggplot(
-  data = abs_alc_ct, 
-  mapping = aes(
-      x = absences_average, 
-      y = Walc, 
-      color = count
-  )
-) + geom_point(size = 5)
-
-
-# Creating a "heat map"
-ggplot(data = select(clean, Walc, absences_average), aes(x = absences_average, y = Walc)) +  
-  geom_density_2d_filled() 
+```{r codeAppend, ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}
 ```
