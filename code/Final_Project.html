@@ -68,6 +68,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="Final_Project_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Final_Project_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Final_Project_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Final_Project_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="Final_Project_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 </head>
@@ -123,39 +127,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="analysis-outline" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-outline">Analysis Outline</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Summary Statistics for Average Grade</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Median</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Mode</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Standard Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.5744063</td>
+<td style="text-align: center;">0.575</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">0.163364</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Our analysis will be focused on how many different variables impact a students average grade.Here we can see some basic information about average student grades. Most notably the average is low, being below 60%. Also the standard deviation is relatively large which give some insight to the variability of our data. We will take these into account when exploring our two analysis questions.</p>
 <p>First we are going to look at the analysis of weekend alcohol consumption (WALC) on GPA. Going into this analysis, we are hypothesizing that there is a negative correlation between the two, that the more alcohol consumption a student partakes in, the lower their GPA would be.</p>
 <p>Second, we will look at the impact of absences on GPA as well. At face-level, we think that absences will also negatively correlate with GPA, as we think that going to class is interrelated to succeeding academically. Therefore, the similarities between the effect of absences and alcohol will be useful as reference and to understand the nature of the dataset itself.</p>
 <p><strong>FAIR and CARE Principles</strong></p>
-<p>Our data meets the FAIR principles because we state our dataset title and exact file name in this document, so readers can use the exact same dataset if they wish to investingate our conclusions or perform their own research. We have a detailed description of how we found our data and what we intended to use it for. Our data was collected through surveys in math and Portuguese language courses. It did not associate itself with American Indigenous groups.</p>
+<p>Our data meets the FAIR principles because we state our dataset title and exact file name in this document, so readers can use the exact same dataset if they wish to investigate our conclusions or perform their own research. We have a detailed description of how we found our data and what we intended to use it for in the earlier sections “Data Introduction” and “Aanalysis Outline”. Therefore, our data is easily findable, the data attached to this project so that it may easily be shared, the project itself on GitHub and in a universal <code>.qmd</code> format, and the contents of the data reusable because we plainly state that it is raw, but processed in this <code>.qmd</code>.</p>
+<p>Regarding CARE principles, our data was collected through surveys in Math and Portuguese language courses. The students themselves voluntarily passed their survey information to the creator of this dataset, and the findings are used responsibly only to uncover and forewarn about the negative consequences of certain behavior. Therefore, this data was clearly given by each individual purely out of their own volition, and in this paper was used responsibly, ethically, and for the collective benefit of <em>all</em> people (students, anyways).</p>
 </section>
 </section>
 <section id="data-analysis" class="level1">
 <h1>Data Analysis</h1>
 <section id="impact-of-weekend-drinking-on-grade-performance" class="level2">
 <h2 class="anchored" data-anchor-id="impact-of-weekend-drinking-on-grade-performance">Impact of Weekend Drinking on Grade Performance</h2>
-<p>As is stated in our introduction, we will start by analyzing weekend alcohol consumption and its relation to GPA. This will be conducted on a combined data set of both the math and Portuguese class. The analysis will be broken down into two parts:</p>
+<p>This section will cover the analysis of weekend alcohol consumption and its relation to GPA. As stated in the introduction, this analysis is conducted on a combined data set of both the Math and Portuguese class. The analysis will be broken down into two parts:</p>
 <ol type="1">
-<li><p><strong>Distribution of Drinking Habits:</strong> Understanding the distribution will help to interpret our conclusions later.</p></li>
-<li><p><strong>Weekend Alcohol Consumption vs GPA:</strong> Using visuals to compare the two variables to find a possible connection between them.</p></li>
+<li><p><strong>Distribution of Drinking Habits:</strong> Understanding the distribution will help to contextualize our later analysis on the results being representative versus outliers.</p></li>
+<li><p><strong>Weekend Alcohol Consumption vs GPA:</strong> Visualizing the two variables to uncover the exact relationship between them.</p></li>
 </ol>
 </section>
 <section id="distribution-of-drinking-habits" class="level2">
 <h2 class="anchored" data-anchor-id="distribution-of-drinking-habits">Distribution of Drinking Habits</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>With this plot we can see the distribution of students and their tendencies to drink alcohol on the weekends. This is measured on a scale between 1 and 5, with 1 being very little to none consumed, and 5 being a lot. We can see that the majority of students fall into the very little to none consumed category. The amount of students descends as we progress up the scale, with the minority of students consuming lots of alcohol.</p>
-<p>This distribution is important to keep note of while we proceed with the analysis. This is because we need to understand that there will be more data for students with little to no alcohol consumption as they make up the majority of the student body. In that same way, there will be very little to base our analysis on for high alcohol consumption.</p>
-</section>
-<section id="weekend-alcohol-consumption-vs-gpa" class="level2">
-<h2 class="anchored" data-anchor-id="weekend-alcohol-consumption-vs-gpa">Weekend Alcohol Consumption vs GPA</h2>
-<div class="cell">
+<div class="cell" data-figure-cap="Figure 1.1: Histogram-distribution of Weekend Alcohol Consumption">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -164,17 +181,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Here we can see a visualization of Weekend Alcohol Consumption and Average grade. This box plot shows 5 boxes, each representing 1 level of weekend drinking. As established in the last section, level 1 means little to no weekend drinking, and level 5 means frequent drinking. The dots on the plot represent outlier students with abnormally low average grades that do not fall inside the standard deviation of the data.</p>
+<p>With this plot we can see the distribution of students and their tendencies to drink alcohol on the weekends. To expand on the caption, the dataset (and thus this visualization) were measured with a scale between 1 and 5, with 1 being “very low” (very little to none consumed), and 5 being “very high” (a lot consumed). We can see that over a third of the 396 students fall into the “very little to none consumed” category. Furthermore, there is a strong leftward skew towards not drinking a lot: the amount of students steeply descends as the amount of alcohol consumes increments upwards. The combined amount of students who rated their drinking “4” or “5” combined is equal to the amount of students who rated their drinking <em>either</em> “2” <em>or</em> “3”, and each of those is only half the number of students who rated themselves “1”.</p>
+<p>Basically, we should make note of the fact that the distribution of students drinking a moderate amount is not that high, and there are even less data on students drinking a lot (4- or 5-rating). That’s not to say that the sample size is insufficient, though, just that these behaviors are “extreme” (statistically speaking) for the student body and thus the students involved “exceptional” (statistically speaking).</p>
+</section>
+<section id="weekend-alcohol-consumption-vs-gpa" class="level2">
+<h2 class="anchored" data-anchor-id="weekend-alcohol-consumption-vs-gpa">Weekend Alcohol Consumption vs GPA</h2>
+<div class="cell" data-figure-cap="Figure 1.2: Weekend Alcohol Consumption and its impact on Average Grade">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here we can see a comparison of Weekend Alcohol Consumption for students, and the distribution of their average grade. This box plot shows 5 boxes, each representing 1 level of weekend drinking. As established in the last section, level 1 being “very low” (infrequent/no drinking), and level 5 being “very high” (frequent drinking). The dots on the plot represent outliers: students with abnormally low average grades to the point they are more-accurately visualized as points than as part of the lowest quartile.</p>
 <p>From this visualization we can learn a few things:</p>
 <ul>
-<li><p>Students who consume less school on weekends will have higher grades on average. This can be seen with the black line in the middle of the box that represents that levels average grade. We can see that the black line falls slightly each level, showing that the average grade is decreasing as weekend alcohol consumption is increasing.</p></li>
-<li><p>There is a larger distribution of average grades in levels 1 and 2 of alcohol consumption compared to higher levels. This relates back to the distribution chart we generated earlier. In that chart we observed that there are more students that fall into the lower levels than the higher levels, this may directly relate to the distribution of students in each level.</p></li>
-<li><p>Even in lower levels of alcohol consumption, there is still a presence of low average grades. In every level, excluding outliers, we see an average exam score lower than 37%. This suggests that there may be other variables that factor into a students average grade.</p></li>
+<li><p>Students who consume less school on weekends <strong>will have higher grades on average.</strong> This can be seen with the black line in the middle of the box that represents that rating’s “median average grade”. We can see that the black line drops slightly with each increment of weekend alcohol consumption, indicating that <em>the average grade is decreasing</em> as weekend alcohol consumption is increasing. The decrease is from 60% (1-rating) to 55% (5-rating).</p></li>
+<li><p>There is a larger distribution of average grades in levels 1 and 2 of alcohol consumption compared to higher levels. This relates back to the distribution chart we generated earlier: in that chart we observed that there are more students that fall into the lower levels than the higher levels. It’s worth keeping in mind that the quartile-variation (the amount of white area above and below the median line) in 1 and 2 is greater than the rest. Perhaps that’s simply because <em>most of the students, good or bad, are in that category</em>. But an alternative explanation is that <em>there may be other variables that factor into a students average grade.</em></p></li>
+<li><p>The lower quartile (the black line below the thicker median line) is roughly the same <em>regardless of how low or high the alcohol consumption rating gets</em> (with exception to a 5-rating). The upper quartile, on the other hand, drops significantly as alcohol consumption increases, dropping from 73% (1-rating) to 63% (5-rating).</p></li>
 </ul>
 </section>
 <section id="findings-for-question-1" class="level2">
 <h2 class="anchored" data-anchor-id="findings-for-question-1">Findings For Question #1</h2>
-<p>From our analysis, we observed a noticeable trend between weekend drinking habits and students’ average grades. The visualization revealed a slight but consistent decline in average grades as the level of weekend alcohol consumption increased. Although the decrease was not substantial, it remained steady across all levels. Based on these findings, we can conclude that <strong>increased frequency of drinking on weekends</strong> is associated with <strong>lower average grades</strong>.</p>
+<p>From our analysis, we observed a noticeable trend between weekend drinking habits and students’ average grades. The visualization revealed a slight but consistent decline in average grades as the level of weekend alcohol consumption increased— it decreased from an average of 60% (“very low” weekend alcohol consumption) to 55% (“very high” weekend alcohol consumption). Although that decrease was not substantial, it did steadily decrease at all levels, as did the lower and upper quartilles with all levels to a varying degree. Therefore, based on these findings, we can conclude that:</p>
+<ol type="1">
+<li><p><strong>Increased frequency of drinking on weekends is associated with lower average grades</strong>. While not to that strong of a degree, an average 5%-decrease in median average grade still is a substantial drop-off. And given that the averages for these classes are only 55% to 60%, it is certainly possible that the decrease is amplified for courses which expect a 75%-85% average. Therefore, in the context of US grade averages, this would be a letter-grade’s worth in drop off.</p></li>
+<li><p><strong>Increased frequency of drinking on weekends doesn’t substantially impact lower-performing students</strong>, as the visualization in Figure 1.2 indicates a stagnant lower-quartile within 1-2% range-difference. This has no causative explanation, though, so lower-performing students should <em>not</em> arrive at the conclusion that their performance isn’t impacted by alcohol.</p></li>
+<li><p><strong>Increased frequency of drinking on weekends is strongly associated with a drop in exceptional-performance</strong>, as the visualization in Figure 1.2 indicates a substantial -10% across the upper quartile from 73% (“very low”) to 63% (“very high”). While not certainly-causative— perhaps every student who drinks some degree of alcohol is just a less-academically-able person— there is a strong correlation, and therefore students who want to maintain a high-grade standard should avoid consuming alcohol with any significant quantity or frequency.</p></li>
+</ol>
 </section>
 </section>
 <section id="impact-of-absences-on-grade-performace" class="level1 page-columns page-full">
@@ -194,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Figure 2.1:&nbsp;The distribution of absence frequencies for students, calculated by the median absense across both classes.</figcaption>
 </figure>
 </div>
@@ -215,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Figure 2.2:&nbsp;Effect of Absences on GPA</figcaption>
 </figure>
 </div>
@@ -233,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Figure 2.3:&nbsp;Effect of Absences in Either Class on Grade</figcaption>
 </figure>
 </div>
@@ -257,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption><i>(a) Point Plot of Absolute Frequencies</i></figcaption>
 </figure>
 </div>
@@ -265,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Final_Project_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Final_Project_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="672"></p>
 <figcaption><i>(b) Heat Map of Relative Frequencies</i></figcaption>
 </figure>
 </div>
@@ -284,8 +320,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>For our analysis of Weekend Drinking Habits and Average Grade, we can draw two conclusions:</p>
 <ol type="1">
-<li><p>The data consistently showed a gradual decline in average grades as the level of weekend alcohol consumption increased. While the decrease was modest, the trend was evident across all levels of consumption.This makes it safe to assume that for an average student, increasing drinking on the weekends would likely lead to a lower average grade.</p></li>
-<li><p>Even at lower levels of alcohol consumption, low average grades are still evident. Across all levels, excluding outliers, there are average grades below 37%. This indicates that additional factors likely contribute to a student’s average grade beyond their weekend drinking habits.</p></li>
+<li><p>The data consistently showed a gradual decline in average grades as the level of weekend alcohol consumption increased. While the decrease was modest, the trend was evident across all levels of consumption. This makes it safe to assume that for an average student, increasing drinking on the weekends would likely lead to a lower average grade, the impact increasing with every increment of “increased-drinking rating”.</p></li>
+<li><p>While lower-performance students do not see much variation as the level of weekend alcohol consumption increases, there is a substantial 10% drop in the upper quartile between “1-rating”-drinking students and “5-rating”-drinking students. This makes it safe to assume that, for a student with higher standard of performance, increased drinking on the weekends disproportionately tank their ability to maintain that exceptional performance.</p></li>
 </ol>
 <p>In the case of absences and GPA, we can conclusively express two concepts:</p>
 <ol type="1">
@@ -300,119 +336,139 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data_math <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/student-mat.csv"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data_port <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/student-por.csv"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>merged <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(data_math, data_port, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"school"</span>, <span class="st">"sex"</span>, <span class="st">"age"</span>, <span class="st">"address"</span>, <span class="st">"famsize"</span>, <span class="st">"Pstatus"</span>, <span class="st">"Medu"</span>, <span class="st">"Fedu"</span>, <span class="st">"Mjob"</span>, <span class="st">"Fjob"</span>, <span class="st">"reason"</span>, <span class="st">"guardian"</span>, <span class="st">"traveltime"</span>))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>clean <span class="ot">&lt;-</span> merged <span class="sc">%&gt;%</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(school, sex, age, <span class="at">Walc =</span> Walc.x, <span class="at">absences_math =</span> absences.x, <span class="at">absences_port =</span> absences.y, <span class="at">grade_math =</span> G3.x, <span class="at">grade_port =</span> G3.y) <span class="sc">%&gt;%</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">absences_average =</span> <span class="fu">round</span>((absences_math <span class="sc">+</span> absences_port) <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grade_average =</span> (grade_math<span class="sc">+</span>grade_port)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grade_average =</span> grade_average<span class="sc">/</span><span class="dv">20</span>, <span class="at">grade_math =</span> grade_math<span class="sc">/</span><span class="dv">20</span>, <span class="at">grade_port =</span> grade_port<span class="sc">/</span><span class="dv">20</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>distribution <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(clean, <span class="fu">aes</span>(<span class="at">x =</span> grade_average)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> sex))</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(clean, <span class="fu">aes</span>(<span class="at">x =</span> Walc)) <span class="sc">+</span> <span class="co">#Plot for weekend alcohol consumption distribution</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="dv">1</span>), <span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weekend Alcohol Consumption (Scale of 1-5)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>, <span class="at">title =</span> <span class="st">"Histogram of Weekend Alcohol Consumption"</span>) <span class="sc">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot of weekend alcohol consumption and average grade</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Set our axis and data</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> clean,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">factor</span>(Walc),</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> grade_average,</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Weekend Alcohol Consumption (Scale of 1-5)"</span>,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade"</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Level of Weekend Alcohol Consumption vs Average Grade"</span> </span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram for the distribution of "average absences"</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(clean, <span class="fu">aes</span>(<span class="at">x =</span> absences_average)) <span class="sc">+</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Absences (Bin Width = 5)"</span>, <span class="at">y =</span> <span class="st">"Frequency of Absences"</span>, <span class="at">title =</span> <span class="st">"Histogram of Average Absence Frequencies"</span>) <span class="sc">+</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Flooring the data to the nearest 5 (e.g. 4 -&gt; 0)</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>clean_v2 <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">abs_avg_group_5 =</span> <span class="fu">round</span>((absences_average)<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>)</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># "Average Absences" boxplot</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Set our axis and data</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> clean_v2,</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">factor</span>(abs_avg_group_5),</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> grade_average,</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences"</span>,</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade"</span>,</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Absences vs GPA"</span> </span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Move the legend</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating "Distribution Groups" of MATH and PORT</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>median_math <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">abs_math_group_5 =</span> <span class="fu">round</span>((absences_math)<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(abs_math_group_5) <span class="sc">%&gt;%</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">med_math =</span> <span class="fu">median</span>(grade_math))</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>median_port <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">abs_port_group_5 =</span> <span class="fu">round</span>((absences_port)<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(abs_port_group_5) <span class="sc">%&gt;%</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">med_port =</span> <span class="fu">median</span>(grade_port))</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Math Absences</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adding lines &amp; points for both MATH and PORT absences</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> median_math, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_math_group_5, <span class="at">y =</span> med_math, <span class="at">linetype =</span> <span class="st">"Math"</span>), <span class="at">color =</span> <span class="st">"yellow"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> median_math, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_math_group_5, <span class="at">y =</span> med_math), <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> median_port, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_port_group_5, <span class="at">y =</span> med_port, <span class="at">linetype =</span> <span class="st">"Portugese"</span>), <span class="at">color =</span> <span class="st">"violet"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> median_port, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_port_group_5, <span class="at">y =</span> med_port), <span class="at">color =</span> <span class="st">"purple"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences (Out of 93)"</span>,</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Median Grade"</span>,</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Absences vs Class Grade (Separated by Class)"</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Line Types"</span>,</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Math"</span> <span class="ot">=</span> <span class="st">"solid"</span>, <span class="st">"Portugese"</span> <span class="ot">=</span> <span class="st">"dotdash"</span>)  <span class="co"># Defining linetypes</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a count for each (Walc, absences_average) point</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>abs_alc_ct <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span> </span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Walc, absences_average) <span class="sc">%&gt;%</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(absences_average, Walc) <span class="sc">%&gt;%</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a "Geom Point" grid for "Absences vs Alcohol" (excluding the few un-supported points)</span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> abs_alc_ct, </span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> absences_average, </span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> Walc, </span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> count</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a "heat map"</span></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">select</span>(clean, Walc, absences_average), <span class="fu">aes</span>(<span class="at">x =</span> absences_average, <span class="at">y =</span> Walc)) <span class="sc">+</span>  </span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d_filled</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>data_math <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/student-mat.csv"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data_port <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/student-por.csv"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>merged <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(data_math, data_port, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"school"</span>, <span class="st">"sex"</span>, <span class="st">"age"</span>, <span class="st">"address"</span>, <span class="st">"famsize"</span>, <span class="st">"Pstatus"</span>, <span class="st">"Medu"</span>, <span class="st">"Fedu"</span>, <span class="st">"Mjob"</span>, <span class="st">"Fjob"</span>, <span class="st">"reason"</span>, <span class="st">"guardian"</span>, <span class="st">"traveltime"</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>clean <span class="ot">&lt;-</span> merged <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(school, sex, age, <span class="at">Walc =</span> Walc.x, <span class="at">absences_math =</span> absences.x, <span class="at">absences_port =</span> absences.y, <span class="at">grade_math =</span> G3.x, <span class="at">grade_port =</span> G3.y) <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">absences_average =</span> <span class="fu">round</span>((absences_math <span class="sc">+</span> absences_port) <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grade_average =</span> (grade_math<span class="sc">+</span>grade_port)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grade_average =</span> grade_average<span class="sc">/</span><span class="dv">20</span>, <span class="at">grade_math =</span> grade_math<span class="sc">/</span><span class="dv">20</span>, <span class="at">grade_port =</span> grade_port<span class="sc">/</span><span class="dv">20</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>distribution <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(clean, <span class="fu">aes</span>(<span class="at">x =</span> grade_average)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> sex))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(grade_average, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">median</span>(grade_average, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">mode =</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(grade_average), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span>])),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">standard deviation</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sd</span>(grade_average, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="sc">%&gt;%</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Summary Statistics for Average Grade"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="fu">c</span>(<span class="st">"c"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Mean"</span>, <span class="st">"Median"</span>, <span class="st">"Mode"</span>, <span class="st">"Standard Deviation"</span>) </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"condensed"</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">font_size =</span> <span class="dv">16</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(clean, <span class="fu">aes</span>(<span class="at">x =</span> Walc)) <span class="sc">+</span> <span class="co">#Plot for weekend alcohol consumption distribution</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="dv">1</span>), <span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weekend Alcohol Consumption (Scale of 1-5)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>, <span class="at">title =</span> <span class="st">"Histogram of Weekend Alcohol Consumption"</span>) <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot of weekend alcohol consumption and average grade</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Set our axis and data</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> clean,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">factor</span>(Walc),</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> grade_average,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Weekend Alcohol Consumption (Scale of 1-5)"</span>,</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade"</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Level of Weekend Alcohol Consumption vs Average Grade"</span> </span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram for the distribution of "average absences"</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(clean, <span class="fu">aes</span>(<span class="at">x =</span> absences_average)) <span class="sc">+</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Absences (Bin Width = 5)"</span>, <span class="at">y =</span> <span class="st">"Frequency of Absences"</span>, <span class="at">title =</span> <span class="st">"Histogram of Average Absence Frequencies"</span>) <span class="sc">+</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Flooring the data to the nearest 5 (e.g. 4 -&gt; 0)</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>clean_v2 <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">abs_avg_group_5 =</span> <span class="fu">round</span>((absences_average)<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co"># "Average Absences" boxplot</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Set our axis and data</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> clean_v2,</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">factor</span>(abs_avg_group_5),</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> grade_average,</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences"</span>,</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade"</span>,</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Absences vs GPA"</span> </span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Move the legend</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating "Distribution Groups" of MATH and PORT</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>median_math <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">abs_math_group_5 =</span> <span class="fu">round</span>((absences_math)<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(abs_math_group_5) <span class="sc">%&gt;%</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">med_math =</span> <span class="fu">median</span>(grade_math))</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>median_port <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">abs_port_group_5 =</span> <span class="fu">round</span>((absences_port)<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(abs_port_group_5) <span class="sc">%&gt;%</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">med_port =</span> <span class="fu">median</span>(grade_port))</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="co"># Math Absences</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adding lines &amp; points for both MATH and PORT absences</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> median_math, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_math_group_5, <span class="at">y =</span> med_math, <span class="at">linetype =</span> <span class="st">"Math"</span>), <span class="at">color =</span> <span class="st">"yellow"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> median_math, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_math_group_5, <span class="at">y =</span> med_math), <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> median_port, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_port_group_5, <span class="at">y =</span> med_port, <span class="at">linetype =</span> <span class="st">"Portugese"</span>), <span class="at">color =</span> <span class="st">"violet"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> median_port, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> abs_port_group_5, <span class="at">y =</span> med_port), <span class="at">color =</span> <span class="st">"purple"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span> </span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Label our data</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of School Absences (Out of 93)"</span>,</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Median Grade"</span>,</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Absences vs Class Grade (Separated by Class)"</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Line Types"</span>,</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Math"</span> <span class="ot">=</span> <span class="st">"solid"</span>, <span class="st">"Portugese"</span> <span class="ot">=</span> <span class="st">"dotdash"</span>)  <span class="co"># Defining linetypes</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( </span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d5e0e0"</span>)</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a count for each (Walc, absences_average) point</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>abs_alc_ct <span class="ot">&lt;-</span> clean <span class="sc">%&gt;%</span> </span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Walc, absences_average) <span class="sc">%&gt;%</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(absences_average, Walc) <span class="sc">%&gt;%</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(count <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a "Geom Point" grid for "Absences vs Alcohol" (excluding the few un-supported points)</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> abs_alc_ct, </span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> absences_average, </span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> Walc, </span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> count</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a "heat map"</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">select</span>(clean, Walc, absences_average), <span class="fu">aes</span>(<span class="at">x =</span> absences_average, <span class="at">y =</span> Walc)) <span class="sc">+</span>  </span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d_filled</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
