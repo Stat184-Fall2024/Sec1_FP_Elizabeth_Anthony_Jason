@@ -12,6 +12,8 @@ editor: visual
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+library(knitr)
+library(kableExtra)
 data_math <- read.csv("../data/student-mat.csv")
 data_port <- read.csv("../data/student-por.csv")
 merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
@@ -47,9 +49,35 @@ Our second dataset is also from Kaggle. It is data collected from a survey in ma
 
 ## Analysis Outline
 
+```{r}
+#| message: false
+#| echo: false
+#| warning: false
+summary_stats <- clean %>%
+  summarize(
+    mean = mean(grade_average, na.rm = TRUE),
+    median = median(grade_average, na.rm = TRUE),
+    mode = as.numeric(names(sort(table(grade_average), decreasing = TRUE)[1])),
+    `standard deviation` = sd(grade_average, na.rm = TRUE)
+  )
+summary_stats %>%
+  kable(
+    caption = "Summary Statistics for Average Grade",
+    booktabs = TRUE,
+    align = c("c", "c", "c", "c"),
+    col.names = c("Mean", "Median", "Mode", "Standard Deviation") 
+  ) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "condensed"),
+    font_size = 16
+  )
+```
+
+Our analysis will be focused on how many different variables impact a students average grade.Here we can see some basic information about average student grades. Most notably the average is low, being below 60%. Also the standard deviation is relatively large which give some insight to the variability of our data. We will take these into account when exploring our two analysis questions.
+
 First we are going to look at the analysis of weekend alcohol consumption (WALC) on GPA. Going into this analysis, we are hypothesizing that there is a negative correlation between the two, that the more alcohol consumption a student partakes in, the lower their GPA would be.
 
-Second, we will look at the impact of absences on GPA as well. At face-level, we think that absences will also negatively correlate with GPA, as we think that going to class is interrelated to succeeding academically. Therefore, the similarities between the effect of absences and alcohol will be useful as reference and to understand the nature of the dataset itself. 
+Second, we will look at the impact of absences on GPA as well. At face-level, we think that absences will also negatively correlate with GPA, as we think that going to class is interrelated to succeeding academically. Therefore, the similarities between the effect of absences and alcohol will be useful as reference and to understand the nature of the dataset itself.
 
 **FAIR and CARE Principles**
 
