@@ -15,11 +15,11 @@ library(tidyr)
 data_math <- read.csv("../data/student-mat.csv")
 data_port <- read.csv("../data/student-por.csv")
 merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
-clean <- merged %>%
-  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y) %>%
-  mutate(absences_average = round((absences_math + absences_port) / 2)) %>%
-  mutate(grade_average = (grade_math+grade_port)/2) %>%
-  mutate(grade_average = grade_average/20, grade_math = grade_math/20, grade_port = grade_port/20)
+clean <- merged%>%
+  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y)%>%
+  mutate(grade_average = (grade_math+grade_port)/2)%>%
+  mutate(grade_average = grade_average*5, grade_math = grade_math*5, grade_port = grade_port*5)
+
 distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
 distribution
 
@@ -63,7 +63,29 @@ Our data was collected through surveys in math and Portuguese language courses. 
 
 # Data Analysis
 
-## Research Question #1
+## Drinking on Weekends vs Average Grade
+
+```{r}
+ggplot( #Set our axis and data
+  data = clean,
+  mapping = aes(
+    x = factor(Walc),
+    y = grade_average,
+  )
+)+
+  geom_boxplot(size = .8)+
+  labs( #Label our data
+    x = "Level of Drinking on Weekends (1 being very low, 5 being very high)",
+    y = "Average Grade",
+    title = "Average Grade by Level of Drinking on Weekends"
+  )+
+  theme_bw()+
+  theme( #Move the legend
+    legend.position = "bottom",
+    panel.background = element_rect(fill = "#d5e0e0")
+  )
+
+```
 
 ## Findings For Question #1
 
