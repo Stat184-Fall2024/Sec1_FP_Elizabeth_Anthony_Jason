@@ -15,11 +15,11 @@ library(tidyr)
 data_math <- read.csv("../data/student-mat.csv")
 data_port <- read.csv("../data/student-por.csv")
 merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
-clean <- merged%>%
-  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y)%>%
-  mutate(grade_average = (grade_math+grade_port)/2)%>%
-  mutate(grade_average = grade_average*5, grade_math = grade_math*5, grade_port = grade_port*5)
-
+clean <- merged %>%
+  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y) %>%
+  mutate(absences_average = round((absences_math + absences_port) / 2)) %>%
+  mutate(grade_average = (grade_math+grade_port)/2) %>%
+  mutate(grade_average = grade_average/20, grade_math = grade_math/20, grade_port = grade_port/20)
 distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
 distribution
 
@@ -51,29 +51,55 @@ Our second dataset is also from Kaggle. It is data collected from a survey in ma
 
 # Data Analysis
 
-## Drinking on Weekends vs Average Grade
+## Impact of Weekend Drinking on Grade Performance
+
+As is stated in our introduction, we will start by analyzing weekend alcohol consumption and its relation to GPA. This will be conducted on a combined data set of both the math and Portuguese class. The analysis will be broken down into two parts:
+
+1.  **Distribution of Drinking Habits:** Understanding the distribution will help to interpret our conclusions later.
+
+2.  **Weekend Alcohol Consumption vs GPA:** Using visuals to compare the two variables to find a possible connection  between them.
+
+## Distribution of Drinking Habits
 
 ```{r}
-ggplot( #Set our axis and data
+#| echo: false
+
+ggplot(clean, aes(x = Walc)) +
+  geom_histogram(breaks = seq(0, 5, by = 1), binwidth = 1, fill = "skyblue", color = "black") +
+  labs(x = "Weekend Alcohol Consumption (Scale of 1-5)", y = "Frequency", title = "Histogram of Average Weekend Alcohol Consumption") +
+  theme_minimal()
+```
+With this plot we can see the distribution of students and their tendencies to drink alcohol on the weekends. This is measured on a scale between 1 and 5, with 1 being very little to none consumed, and 5 being a lot. We can see that the majority of students fall into the very little to none consumed category. The amount of students descends as we progress up the scale, with the minority of students consuming lots of alcohol. 
+
+This distribution is important to keep note of while we proceed with the analysis. This is because we need to understand that there will be more data for students with little to no alcohol consumption as they make up the majority of the student body. In that same way, there will be very little to base our analysis on for high alcohol consumption.
+
+## Weekend Alcohol Consumption vs GPA 
+
+```{r}
+#| echo: false
+
+
+ggplot( # Set our axis and data
   data = clean,
   mapping = aes(
     x = factor(Walc),
     y = grade_average,
   )
-)+
-  geom_boxplot(size = .8)+
-  labs( #Label our data
-    x = "Level of Drinking on Weekends (1 being very low, 5 being very high)",
+) +
+  geom_boxplot(size = .8) +
+  labs( # Label our data
+    x = "Weekend Alcohol Consuumption (Scale of 1-5)",
     y = "Average Grade",
-    title = "Average Grade by Level of Drinking on Weekends"
-  )+
-  theme_bw()+
-  theme( #Move the legend
-    legend.position = "bottom",
+    title = "Level of Weekend Alcohol Consumption vs Average Grade" 
+  ) +
+  theme_bw() +
+  theme(
     panel.background = element_rect(fill = "#d5e0e0")
   )
-
 ```
+Here we can see a visualization of Weekend Alcohol Consumption and Average grade. This box plot shows 5 boxes, each representing 1 level of weekend drinking. As established in the last section, level 1 means little to no weekend drinking, and level 5 means frequent drinking. The dots on the plot represent outlier students with abnormally low average grades that do not fall inside the standard deviation of the data.  
+
+
 
 ## Findings For Question #1
 
