@@ -32,7 +32,7 @@ We present the guidelines as a checklist in this README. This means that your te
   - [X] Your main data source may __not__ be one that we used in class nor be found in any R package.
   - [X] Supplementary data sources may come from anywhere.
 - [X] Read in your data and perform any necessary data wrangling and cleaning.
-- [ ] Conduct Exploratory Data Analysis.*
+- [X] Conduct Exploratory Data Analysis.*
 - [X] Prepare a reproducible report.
   - [X] Use a QMD file; the output type is PDF.
   - [X] The report should be well organized with section headings
