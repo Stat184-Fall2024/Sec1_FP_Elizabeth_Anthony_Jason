@@ -12,8 +12,8 @@ editor: visual
 library(ggplot2)
 library(dplyr)
 library(tidyr)
-data_math <- read.csv("../downloads/archive (1)/student-mat.csv")
-data_port <- read.csv("../downloads/archive (1)/student-por.csv")
+data_math <- read.csv("../data/student-mat.csv")
+data_port <- read.csv("../data/student-por.csv")
 merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
 clean <- merged %>%
   select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y) %>%
@@ -21,7 +21,6 @@ clean <- merged %>%
   mutate(grade_average = (grade_math+grade_port)/2) %>%
   mutate(grade_average = grade_average/20, grade_math = grade_math/20, grade_port = grade_port/20)
 distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
-distribution
 ```
 
 # Introduction
@@ -71,9 +70,9 @@ As is stated in our introduction, we will start by analyzing weekend alcohol con
 ```{r}
 #| echo: false
 
-ggplot(clean, aes(x = Walc)) +
+ggplot(clean, aes(x = Walc)) + #Plot for weekend alcohol consumption distribution
   geom_histogram(breaks = seq(0, 5, by = 1), binwidth = 1, fill = "skyblue", color = "black") +
-  labs(x = "Weekend Alcohol Consumption (Scale of 1-5)", y = "Frequency", title = "Histogram of Average Weekend Alcohol Consumption") +
+  labs(x = "Weekend Alcohol Consumption (Scale of 1-5)", y = "Frequency", title = "Histogram of Weekend Alcohol Consumption") +
   theme_minimal()
 ```
 With this plot we can see the distribution of students and their tendencies to drink alcohol on the weekends. This is measured on a scale between 1 and 5, with 1 being very little to none consumed, and 5 being a lot. We can see that the majority of students fall into the very little to none consumed category. The amount of students descends as we progress up the scale, with the minority of students consuming lots of alcohol. 
@@ -85,7 +84,7 @@ This distribution is important to keep note of while we proceed with the analysi
 ```{r}
 #| echo: false
 
-
+#Plot of weekend alcohol consumption and average grade
 ggplot( # Set our axis and data
   data = clean,
   mapping = aes(
