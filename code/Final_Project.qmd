@@ -1,5 +1,5 @@
 ---
-title: "Final_Project"
+title: "Stat 184 Final Project: The Effects of Weekend Alcohol Consumption and Absences on GPA"
 author: "Anthony B., Elizabeth S., Jason Z."
 format: html
 editor: visual
@@ -12,17 +12,16 @@ editor: visual
 library(ggplot2)
 library(dplyr)
 library(tidyr)
-data_math <- read.csv("../data/student-mat.csv")
-data_port <- read.csv("../data/student-por.csv")
+data_math <- read.csv("../downloads/archive (1)/student-mat.csv")
+data_port <- read.csv("../downloads/archive (1)/student-por.csv")
 merged <- inner_join(data_math, data_port, by = c("school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime"))
-clean <- merged%>%
-  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y)%>%
-  mutate(grade_average = (grade_math+grade_port)/2)%>%
-  mutate(grade_average = grade_average*5, grade_math = grade_math*5, grade_port = grade_port*5)
-
+clean <- merged %>%
+  select(school, sex, age, Walc = Walc.x, absences_math = absences.x, absences_port = absences.y, grade_math = G3.x, grade_port = G3.y) %>%
+  mutate(absences_average = round((absences_math + absences_port) / 2)) %>%
+  mutate(grade_average = (grade_math+grade_port)/2) %>%
+  mutate(grade_average = grade_average/20, grade_math = grade_math/20, grade_port = grade_port/20)
 distribution <- ggplot(clean, aes(x = grade_average)) + geom_histogram(aes(fill = sex))
 distribution
-
 ```
 
 # Introduction
@@ -53,13 +52,9 @@ First we are going to look at the analysis of weekend alcohol consumption (WALC)
 
 Second, we will look at the impact of absences on GPA as well. At face-level, we think that absences will also negatively correlate with GPA, as we think that going to class is interrelated to succeeding academically.
 
-##FAIR and CARE Principles
+**FAIR and CARE Principles**
 
-###FAIR
-Our data meets the FAIR principles because we state our dataset title and exact file name so that our readers can use the exact same dataset if they want for their own research. We have a detailed description of how we found our data and what we intended to use it for.
-
-###CARE
-Our data was collected through surveys in math and Portuguese language courses. It did not associate itself with American Indigenous groups.
+Our data meets the FAIR principles because we state our dataset title and exact file name so that our readers can use the exact same dataset if they want for their own research. We have a detailed description of how we found our data and what we intended to use it for. Our data was collected through surveys in math and Portuguese language courses. It did not associate itself with American Indigenous groups.
 
 # Data Analysis
 
