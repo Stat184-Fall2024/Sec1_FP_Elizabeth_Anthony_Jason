@@ -39,21 +39,21 @@ One last consideration: it should be noted that **behaviors have consequences.**
 
 ## Data Introduction
 
-We are using a dataset from the website Kaggle, which has a public catalog free for anyone to use. The specific dataset that we landed on was student_lifestyle_dataset.csv. It is a dataset collected by Sumit Kumar, a researcher from India for the academic year from August 2023 to May 2024 that monitored student's (primarily from India) lifestyle habits in college.
+We are using a dataset from the website Kaggle, which has a public catalog free for anyone to use. The specific dataset that we landed on was `student_lifestyle_dataset.csv`. It is a dataset collected by Sumit Kumar, a researcher from India for the academic year from August 2023 to May 2024 that monitored student's (primarily from India) lifestyle habits in college.
 
 It has 2000 cases each identified by a number going from 1-2000, with a recorded value for seven variables about their daily lifestyle, including ones of interest for us: sleep hours, social hours, and GPA (The author noted in a response to a comment that CGPA values were converted to GPA values to ensure usability for international researchers).
 
-Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's, but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset includes 33 variables with 396 cases.
+Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's--- `student-mat.csv` and `student-por.csv`--- but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset contains 33 variables and 396 cases.
 
 ## Analysis Outline
 
 First we are going to look at the analysis of weekend alcohol consumption (WALC) on GPA. Going into this analysis, we are hypothesizing that there is a negative correlation between the two, that the more alcohol consumption a student partakes in, the lower their GPA would be.
 
-Second, we will look at the impact of absences on GPA as well. At face-level, we think that absences will also negatively correlate with GPA, as we think that going to class is interrelated to succeeding academically.
+Second, we will look at the impact of absences on GPA as well. At face-level, we think that absences will also negatively correlate with GPA, as we think that going to class is interrelated to succeeding academically. Therefore, the similarities between the effect of absences and alcohol will be useful as reference and to understand the nature of the dataset itself. 
 
 **FAIR and CARE Principles**
 
-Our data meets the FAIR principles because we state our dataset title and exact file name so that our readers can use the exact same dataset if they want for their own research. We have a detailed description of how we found our data and what we intended to use it for. Our data was collected through surveys in math and Portuguese language courses. It did not associate itself with American Indigenous groups.
+Our data meets the FAIR principles because we state our dataset title and exact file name in this document, so readers can use the exact same dataset if they wish to investingate our conclusions or perform their own research. We have a detailed description of how we found our data and what we intended to use it for. Our data was collected through surveys in math and Portuguese language courses. It did not associate itself with American Indigenous groups.
 
 # Data Analysis
 
@@ -63,7 +63,7 @@ As is stated in our introduction, we will start by analyzing weekend alcohol con
 
 1.  **Distribution of Drinking Habits:** Understanding the distribution will help to interpret our conclusions later.
 
-2.  **Weekend Alcohol Consumption vs GPA:** Using visuals to compare the two variables to find a possible connection  between them.
+2.  **Weekend Alcohol Consumption vs GPA:** Using visuals to compare the two variables to find a possible connection between them.
 
 ## Distribution of Drinking Habits
 
@@ -75,11 +75,12 @@ ggplot(clean, aes(x = Walc)) + #Plot for weekend alcohol consumption distributio
   labs(x = "Weekend Alcohol Consumption (Scale of 1-5)", y = "Frequency", title = "Histogram of Weekend Alcohol Consumption") +
   theme_minimal()
 ```
-With this plot we can see the distribution of students and their tendencies to drink alcohol on the weekends. This is measured on a scale between 1 and 5, with 1 being very little to none consumed, and 5 being a lot. We can see that the majority of students fall into the very little to none consumed category. The amount of students descends as we progress up the scale, with the minority of students consuming lots of alcohol. 
+
+With this plot we can see the distribution of students and their tendencies to drink alcohol on the weekends. This is measured on a scale between 1 and 5, with 1 being very little to none consumed, and 5 being a lot. We can see that the majority of students fall into the very little to none consumed category. The amount of students descends as we progress up the scale, with the minority of students consuming lots of alcohol.
 
 This distribution is important to keep note of while we proceed with the analysis. This is because we need to understand that there will be more data for students with little to no alcohol consumption as they make up the majority of the student body. In that same way, there will be very little to base our analysis on for high alcohol consumption.
 
-## Weekend Alcohol Consumption vs GPA 
+## Weekend Alcohol Consumption vs GPA
 
 ```{r}
 #| echo: false
@@ -103,15 +104,16 @@ ggplot( # Set our axis and data
     panel.background = element_rect(fill = "#d5e0e0")
   )
 ```
-Here we can see a visualization of Weekend Alcohol Consumption and Average grade. This box plot shows 5 boxes, each representing 1 level of weekend drinking. As established in the last section, level 1 means little to no weekend drinking, and level 5 means frequent drinking. The dots on the plot represent outlier students with abnormally low average grades that do not fall inside the standard deviation of the data.  
+
+Here we can see a visualization of Weekend Alcohol Consumption and Average grade. This box plot shows 5 boxes, each representing 1 level of weekend drinking. As established in the last section, level 1 means little to no weekend drinking, and level 5 means frequent drinking. The dots on the plot represent outlier students with abnormally low average grades that do not fall inside the standard deviation of the data.
 
 From this visualization we can learn a few things:
 
-- Students who consume less school on weekends will have higher grades on average. This can be seen with the black line in the middle of the box that represents that levels average grade. We can see that the black line falls slightly each level, showing that the average grade is decreasing as weekend alcohol consumption is increasing.
+-   Students who consume less school on weekends will have higher grades on average. This can be seen with the black line in the middle of the box that represents that levels average grade. We can see that the black line falls slightly each level, showing that the average grade is decreasing as weekend alcohol consumption is increasing.
 
-- There is a larger distribution of average grades in levels 1 and 2 of alcohol consumption compared to higher levels. This relates back to the distribution chart we generated earlier. In that chart we observed that there are more students that fall into the lower levels than the higher levels, this may directly relate to the distribution of students in each level. 
+-   There is a larger distribution of average grades in levels 1 and 2 of alcohol consumption compared to higher levels. This relates back to the distribution chart we generated earlier. In that chart we observed that there are more students that fall into the lower levels than the higher levels, this may directly relate to the distribution of students in each level.
 
-- Even in lower levels of alcohol consumption, there is still a presence of low average grades. In every level, excluding outliers, we see an average exam score lower than 37%. This suggests that there may be other variables that factor into a students average grade.
+-   Even in lower levels of alcohol consumption, there is still a presence of low average grades. In every level, excluding outliers, we see an average exam score lower than 37%. This suggests that there may be other variables that factor into a students average grade.
 
 ## Findings For Question #1
 
@@ -287,19 +289,17 @@ The data seems to perhaps have a vertical correlation between drinking and absen
 
 ## Conclusion
 
-
 For our analysis of Weekend Drinking Habits and Average Grade, we can draw two conclusions:
 
-1. The data consistently showed a gradual decline in average grades as the level of weekend alcohol consumption increased. While the decrease was modest, the trend was evident across all levels of consumption.This makes it safe to assume that for an average student, increasing drinking on the weekends would likely lead to a lower average grade.
+1.  The data consistently showed a gradual decline in average grades as the level of weekend alcohol consumption increased. While the decrease was modest, the trend was evident across all levels of consumption.This makes it safe to assume that for an average student, increasing drinking on the weekends would likely lead to a lower average grade.
 
-2. Even at lower levels of alcohol consumption, low average grades are still evident. Across all levels, excluding outliers, there are average grades below 37%. This indicates that additional factors likely contribute to a student’s average grade beyond their weekend drinking habits.
+2.  Even at lower levels of alcohol consumption, low average grades are still evident. Across all levels, excluding outliers, there are average grades below 37%. This indicates that additional factors likely contribute to a student’s average grade beyond their weekend drinking habits.
 
-In the case of absences and GPA, we can conclusively express two concepts: 
+In the case of absences and GPA, we can conclusively express two concepts:
 
 1.  First, we observe a -7% drop-off in the median average grade for students missing 15 to 20 classes, and just a 3% drop-off in the median average grade for students missing between 10 and 15 classes. Given that only 10% of students even miss between 10 and 20 classes, and only 3% of students between 15 and 20 classes, it is safe to say that for the majority of students, having to miss a few courses does not substantially impact their performance in class.
 
 2.  That being said, **that sentiment is upended for courses with a greater "degree of participation".** For strong-participatory courses, such as the Math course considered in this dataset, even missing 5-10 classes in opposed to 0-5 diminished students' median average GPA by 5%, indicating that the impact of absences scales with the difficulty of the course. Therefore, for the courses where you would most struggle to pass, attendance is key.
-
 
 # Code Appendix
 
