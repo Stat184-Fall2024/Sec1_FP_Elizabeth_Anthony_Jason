@@ -51,7 +51,7 @@ We present the guidelines as a checklist in this README. This means that your te
     - [ ] __Optional__: If your research question/data make sense to do so, try creating a map.
     - [X] Data visualizations should be appropriately sized--not too small and not too big.
     - [X] Figures and Tables should have appropriate captions and appropriately cross-referenced in the body of your report.
-    - [ ] Your team must produce at least one table that is *not* a display of raw data.
+    - [X] Your team must produce at least one table that is *not* a display of raw data.
     - [X] Your team must produce at least one plot/graph.
     - [X] There should be narrative text helping readers to better understand what the visualization helps them to learn about the data and context.
   - [X] Your report should narrative text (beyond explaining tables and figures) that explains the context and helps the reader make sense of what is going on.
@@ -68,9 +68,9 @@ We present the guidelines as a checklist in this README. This means that your te
   - __Possible Style Guides:__ There are several different coding Style Guides you can follow; here are a few. [The BOAST Style Guide](https://educationshinyappteam.github.io/Style_Guide/coding.html), [The Tidyverse Style Guide](https://style.tidyverse.org/), [Google's R Style Guide](https://google.github.io/styleguide/Rguide.html)
 - [X] Sign up for your Work-in-Progress Presentation
 - [X] Complete your Work-in-Progress Presentation (details below)
-- [ ] Finalize your work and submit your report as a __PDF__ to the appropriate submission portal in Canvas by the deadline.
-  - [ ] As a comment on your submission, include a link to your team's project repo.
-- [ ] Each team member must complete their own copy of the Self & Pear Evaluations QMD file and upload the rendered file to the appropriate submission portal in Canvas by the deadline.
+- [X] Finalize your work and submit your report as a __PDF__ to the appropriate submission portal in Canvas by the deadline.
+  - [] As a comment on your submission, include a link to your team's project repo.
+- [X] Each team member must complete their own copy of the Self & Pear Evaluations QMD file and upload the rendered file to the appropriate submission portal in Canvas by the deadline.
 
 ## Work-in-Progress Presentations
 
