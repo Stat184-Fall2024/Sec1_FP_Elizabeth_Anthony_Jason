@@ -41,11 +41,9 @@ One last consideration: it should be noted that **behaviors have consequences.**
 
 ## Data Introduction
 
-We are using a dataset from the website Kaggle, which has a public catalog free for anyone to use. The specific dataset that we landed on was `student_lifestyle_dataset.csv`. It is a dataset collected by Sumit Kumar, a researcher from India for the academic year from August 2023 to May 2024 that monitored student's (primarily from India) lifestyle habits in college.
+Originally, we were going to use a dataset from the website Kaggle, which has a public catalog free for anyone to use, called `student_lifestyle_dataset.csv`. It is a dataset collected by Sumit Kumar, a researcher from India for the academic year from August 2023 to May 2024 that monitored student's (primarily from India) lifestyle habits in college. However, because we found out later into the project that we needed two datasets, we decided against combining the lifestyle dataset with another dataset and instead found our new dataset.
 
-It has 2000 cases each identified by a number going from 1-2000, with a recorded value for seven variables about their daily lifestyle, including ones of interest for us: sleep hours, social hours, and GPA (The author noted in a response to a comment that CGPA values were converted to GPA values to ensure usability for international researchers).
-
-Our second dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's--- `student-mat.csv` and `student-por.csv`--- but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset contains 33 variables and 396 cases.
+Our new dataset is also from Kaggle. It is data collected from a survey in math and Portuguese language classes of students in secondary (high) school. The data is split into two csv's--- `student-mat.csv` and `student-por.csv`--- but we merged the two to create one big dataset and will use that in our analysis. Our final merged dataset contains 33 variables and 396 cases. The variables that we are most interested in are weekend alcohol consumption (denoted as WALC, 1 being very low and 5 being very high), absences (0-93), and grade. Grade was split up into 3 periods (G1, G2, and G3) on a scale of 0-20.
 
 ## Analysis Outline
 
